@@ -43,7 +43,7 @@ const scatterState = {
   xTask: "taxonomy",
   yTask: "host",
   cdsScenario: "cds-short",
-  cdsMetric: "kmer_JSD",
+  cdsMetric: "is_CDS",
   hiddenFamilies: new Set(),
   hitPoints: [],
 };
@@ -142,7 +142,7 @@ function initStats() {
   const stats = [
     { v: "4", l: "Task types", s: "Taxonomy · Host · Genome · CDS", c: "rgba(15,159,154,.18)" },
     { v: "18", l: "Scenarios", s: "12 classification + 6 generation", c: "rgba(37,99,235,.16)" },
-    { v: "74", l: "Models in JSON", s: "classification tables include classical tools", c: "rgba(79,70,229,.16)" },
+    { v: "74", l: "Models", s: "classification tables include classical tools", c: "rgba(79,70,229,.16)" },
     { v: "58K", l: "Viral samples", s: "paper-level curated corpus", c: "rgba(231,111,81,.16)" },
   ];
   $("#statGrid").innerHTML = stats
@@ -219,7 +219,7 @@ function renderPills() {
     if (state.task === "taxonomy") { state.scenario = "ALL-taxon-genus"; state.metric = "avg_taxon"; }
     if (state.task === "host") { state.scenario = "ALL-host-genus"; state.metric = "f1_macro"; }
     if (state.task === "genome") { state.scenario = "genome-short"; state.metric = "mean"; }
-    if (state.task === "cds") { state.scenario = "cds-short"; state.metric = "kmer_JSD"; }
+    if (state.task === "cds") { state.scenario = "cds-short"; state.metric = "is_CDS"; }
     selectedModel = null;
     renderAll();
   }));
