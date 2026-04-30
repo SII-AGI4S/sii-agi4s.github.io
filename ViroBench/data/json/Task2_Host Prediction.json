@@ -1,0 +1,1790 @@
+{
+  "RNA-host-genus": [
+    {
+      "model": "CNN",
+      "f1_macro": "60.46(7.49)"
+    },
+    {
+      "model": "LucaOne-default-step36M",
+      "f1_macro": "65.55(5.67)"
+    },
+    {
+      "model": "LucaOne-gene-step36.8M",
+      "f1_macro": "51.27(8.13)"
+    },
+    {
+      "model": "LucaVirus-default-step3.8M",
+      "f1_macro": "74.28(1.53)"
+    },
+    {
+      "model": "LucaVirus-gene-step3.8M",
+      "f1_macro": "59.45(13.46)"
+    },
+    {
+      "model": "DNABERT-S",
+      "f1_macro": "77.88(2.44)"
+    },
+    {
+      "model": "GenomeOcean-100M",
+      "f1_macro": "67.26(6.40)"
+    },
+    {
+      "model": "GenomeOcean-500M",
+      "f1_macro": "45.19(1.87)"
+    },
+    {
+      "model": "GenomeOcean-4B",
+      "f1_macro": "72.54(4.11)"
+    },
+    {
+      "model": "Evo-1-8k-base",
+      "f1_macro": "66.72(1.10)"
+    },
+    {
+      "model": "Evo-1-131k-base",
+      "f1_macro": "67.44(2.86)"
+    },
+    {
+      "model": "Evo-1.5-8k-base",
+      "f1_macro": "64.05(3.51)"
+    },
+    {
+      "model": "Evo2-1b-base",
+      "f1_macro": "15.48(0.84)"
+    },
+    {
+      "model": "Evo2-7b-base",
+      "f1_macro": "78.93(1.62)"
+    },
+    {
+      "model": "Evo2-7b",
+      "f1_macro": "80.84(2.00)"
+    },
+    {
+      "model": "Evo2-40b-base",
+      "f1_macro": "78.96(0.51)"
+    },
+    {
+      "model": "Evo2-40b",
+      "f1_macro": "79.76(1.14)"
+    },
+    {
+      "model": "ntv3-8m-pre",
+      "f1_macro": "13.73(7.35)"
+    },
+    {
+      "model": "ntv3-100m-pre",
+      "f1_macro": "58.22(12.95)"
+    },
+    {
+      "model": "ntv3-650m-pre",
+      "f1_macro": "29.35(6.61)"
+    },
+    {
+      "model": "ntv3-100m-post",
+      "f1_macro": "57.66(0.90)"
+    },
+    {
+      "model": "ntv3-650m-post",
+      "f1_macro": "63.06(10.41)"
+    },
+    {
+      "model": "AIDO.DNA-300M",
+      "f1_macro": "76.33(5.33)"
+    },
+    {
+      "model": "AIDO.DNA-7B",
+      "f1_macro": "62.90(0.69)"
+    },
+    {
+      "model": "caduceus-ph",
+      "f1_macro": "42.38(1.92)"
+    },
+    {
+      "model": "caduceus-ps",
+      "f1_macro": "37.34(3.58)"
+    },
+    {
+      "model": "Genos-1.2B",
+      "f1_macro": "7.02(0.00)"
+    },
+    {
+      "model": "Genos-10B",
+      "f1_macro": "40.10(10.76)"
+    },
+    {
+      "model": "Genos-10B-v2",
+      "f1_macro": "24.48(4.00)"
+    },
+    {
+      "model": "hyenadna-tiny-16k",
+      "f1_macro": "44.68(8.14)"
+    },
+    {
+      "model": "hyenadna-tiny-1k",
+      "f1_macro": "39.54(12.72)"
+    },
+    {
+      "model": "hyenadna-small-32k",
+      "f1_macro": "39.88(7.63)"
+    },
+    {
+      "model": "hyenadna-medium-160k",
+      "f1_macro": "42.89(8.19)"
+    },
+    {
+      "model": "hyenadna-medium-450k",
+      "f1_macro": "40.16(7.98)"
+    },
+    {
+      "model": "hyenadna-large-1m",
+      "f1_macro": "41.55(4.36)"
+    },
+    {
+      "model": "DNABERT-2-117M",
+      "f1_macro": "34.87(1.90)"
+    },
+    {
+      "model": "gena-lm-bert-base-t2t",
+      "f1_macro": "64.15(1.87)"
+    },
+    {
+      "model": "gena-lm-bert-large-t2t",
+      "f1_macro": "57.70(6.85)"
+    },
+    {
+      "model": "gena-lm-bigbird-base-t2t",
+      "f1_macro": "60.78(2.50)"
+    },
+    {
+      "model": "GROVER",
+      "f1_macro": "42.38(2.19)"
+    },
+    {
+      "model": "OmniReg-base",
+      "f1_macro": "43.53(7.83)"
+    },
+    {
+      "model": "DNABERT-3",
+      "f1_macro": "41.60(4.00)"
+    },
+    {
+      "model": "DNABERT-4",
+      "f1_macro": "36.98(2.26)"
+    },
+    {
+      "model": "DNABERT-5",
+      "f1_macro": "40.86(1.63)"
+    },
+    {
+      "model": "DNABERT-6",
+      "f1_macro": "49.40(3.81)"
+    },
+    {
+      "model": "nt-500m-human",
+      "f1_macro": "42.66(2.87)"
+    },
+    {
+      "model": "nt-500m-1000g",
+      "f1_macro": "27.44(3.47)"
+    },
+    {
+      "model": "nt-2.5b-1000g",
+      "f1_macro": "30.31(13.60)"
+    },
+    {
+      "model": "nt-2.5b-ms",
+      "f1_macro": "31.35(2.16)"
+    },
+    {
+      "model": "ntv2-50m-ms-3kmer",
+      "f1_macro": "37.56(8.54)"
+    },
+    {
+      "model": "ntv2-50m-ms",
+      "f1_macro": "52.75(9.53)"
+    },
+    {
+      "model": "ntv2-100m-ms",
+      "f1_macro": "44.51(19.61)"
+    },
+    {
+      "model": "ntv2-250m-ms",
+      "f1_macro": "48.96(7.96)"
+    },
+    {
+      "model": "ntv2-500m-ms",
+      "f1_macro": "45.37(35.42)"
+    },
+    {
+      "model": "GENERator-v2-eukaryote-1.2b-base",
+      "f1_macro": "7.02(0.00)"
+    },
+    {
+      "model": "GENERator-v2-eukaryote-3b-base",
+      "f1_macro": "7.02(0.00)"
+    },
+    {
+      "model": "GENERator-v2-prokaryote-1.2b-base",
+      "f1_macro": "7.02(0.00)"
+    },
+    {
+      "model": "GENERator-v2-prokaryote-3b-base",
+      "f1_macro": "7.02(0.00)"
+    },
+    {
+      "model": "AIDO.RNA-650M",
+      "f1_macro": "49.63(0.79)"
+    },
+    {
+      "model": "AIDO.RNA-1.6B",
+      "f1_macro": "44.71(1.80)"
+    },
+    {
+      "model": "AIDO.RNA-650M-CDS",
+      "f1_macro": "67.80(1.17)"
+    },
+    {
+      "model": "AIDO.RNA-1.6B-CDS",
+      "f1_macro": "68.17(3.83)"
+    },
+    {
+      "model": "RNA-FM",
+      "f1_macro": "45.39(7.70)"
+    },
+    {
+      "model": "RiNALMo",
+      "f1_macro": "47.67(0.72)"
+    },
+    {
+      "model": "BiRNA-BERT",
+      "f1_macro": "40.93(0.60)"
+    },
+    {
+      "model": "RNABERT",
+      "f1_macro": "36.83(2.88)"
+    },
+    {
+      "model": "MP-RNA",
+      "f1_macro": "57.44(4.31)"
+    },
+    {
+      "model": "ViroHyena-1m",
+      "f1_macro": "46.07(2.83)"
+    },
+    {
+      "model": "ViroHyena-253m",
+      "f1_macro": "40.69(1.88)"
+    },
+    {
+      "model": "ViroHyena-436k",
+      "f1_macro": "44.80(5.87)"
+    },
+    {
+      "model": "ViroHyena-6m",
+      "f1_macro": "46.38(0.90)"
+    },
+    {
+      "model": "BiLSTM",
+      "f1_macro": "81.56(0.57)"
+    },
+    {
+      "model": "BLAST",
+      "f1_macro": "93.01(0.00)"
+    },
+    {
+      "model": "Kraken2",
+      "f1_macro": "40.49(0.00)"
+    }
+  ],
+  "RNA-host-times": [
+    {
+      "model": "CNN",
+      "f1_macro": "40.71(13.21)"
+    },
+    {
+      "model": "LucaOne-default-step36M",
+      "f1_macro": "49.85(3.99)"
+    },
+    {
+      "model": "LucaOne-gene-step36.8M",
+      "f1_macro": "19.59(20.79)"
+    },
+    {
+      "model": "LucaVirus-default-step3.8M",
+      "f1_macro": "50.91(6.96)"
+    },
+    {
+      "model": "LucaVirus-gene-step3.8M",
+      "f1_macro": "37.42(5.12)"
+    },
+    {
+      "model": "DNABERT-S",
+      "f1_macro": "52.50(12.38)"
+    },
+    {
+      "model": "GenomeOcean-100M",
+      "f1_macro": "37.30(7.75)"
+    },
+    {
+      "model": "GenomeOcean-500M",
+      "f1_macro": "23.75(4.08)"
+    },
+    {
+      "model": "GenomeOcean-4B",
+      "f1_macro": "44.13(8.64)"
+    },
+    {
+      "model": "Evo-1-8k-base",
+      "f1_macro": "51.83(3.16)"
+    },
+    {
+      "model": "Evo-1-131k-base",
+      "f1_macro": "51.01(1.45)"
+    },
+    {
+      "model": "Evo-1.5-8k-base",
+      "f1_macro": "50.27(3.88)"
+    },
+    {
+      "model": "Evo2-1b-base",
+      "f1_macro": "4.06(0.09)"
+    },
+    {
+      "model": "Evo2-7b-base",
+      "f1_macro": "63.83(1.39)"
+    },
+    {
+      "model": "Evo2-7b",
+      "f1_macro": "63.86(3.08)"
+    },
+    {
+      "model": "Evo2-40b-base",
+      "f1_macro": "62.18(1.22)"
+    },
+    {
+      "model": "Evo2-40b",
+      "f1_macro": "62.95(1.97)"
+    },
+    {
+      "model": "ntv3-8m-pre",
+      "f1_macro": "3.91(0.00)"
+    },
+    {
+      "model": "ntv3-100m-pre",
+      "f1_macro": "13.12(15.96)"
+    },
+    {
+      "model": "ntv3-650m-pre",
+      "f1_macro": "3.91(0.00)"
+    },
+    {
+      "model": "ntv3-100m-post",
+      "f1_macro": "33.94(3.31)"
+    },
+    {
+      "model": "ntv3-650m-post",
+      "f1_macro": "35.70(3.04)"
+    },
+    {
+      "model": "AIDO.DNA-300M",
+      "f1_macro": "47.45(1.67)"
+    },
+    {
+      "model": "AIDO.DNA-7B",
+      "f1_macro": "40.72(6.88)"
+    },
+    {
+      "model": "caduceus-ph",
+      "f1_macro": "26.67(1.58)"
+    },
+    {
+      "model": "caduceus-ps",
+      "f1_macro": "12.45(14.80)"
+    },
+    {
+      "model": "Genos-1.2B",
+      "f1_macro": "3.91(0.00)"
+    },
+    {
+      "model": "Genos-10B",
+      "f1_macro": "3.91(0.00)"
+    },
+    {
+      "model": "Genos-10B-v2",
+      "f1_macro": "3.91(0.00)"
+    },
+    {
+      "model": "hyenadna-tiny-16k",
+      "f1_macro": "16.91(11.89)"
+    },
+    {
+      "model": "hyenadna-tiny-1k",
+      "f1_macro": "3.91(0.00)"
+    },
+    {
+      "model": "hyenadna-small-32k",
+      "f1_macro": "8.35(7.70)"
+    },
+    {
+      "model": "hyenadna-medium-160k",
+      "f1_macro": "3.91(0.00)"
+    },
+    {
+      "model": "hyenadna-medium-450k",
+      "f1_macro": "3.91(0.00)"
+    },
+    {
+      "model": "hyenadna-large-1m",
+      "f1_macro": "3.91(0.00)"
+    },
+    {
+      "model": "DNABERT-2-117M",
+      "f1_macro": "3.91(0.00)"
+    },
+    {
+      "model": "gena-lm-bert-base-t2t",
+      "f1_macro": "39.23(5.69)"
+    },
+    {
+      "model": "gena-lm-bert-large-t2t",
+      "f1_macro": "35.65(4.77)"
+    },
+    {
+      "model": "gena-lm-bigbird-base-t2t",
+      "f1_macro": "33.51(2.77)"
+    },
+    {
+      "model": "GROVER",
+      "f1_macro": "26.56(1.42)"
+    },
+    {
+      "model": "OmniReg-base",
+      "f1_macro": "17.69(23.88)"
+    },
+    {
+      "model": "DNABERT-3",
+      "f1_macro": "14.56(7.25)"
+    },
+    {
+      "model": "DNABERT-4",
+      "f1_macro": "6.78(4.98)"
+    },
+    {
+      "model": "DNABERT-5",
+      "f1_macro": "23.38(1.18)"
+    },
+    {
+      "model": "DNABERT-6",
+      "f1_macro": "29.56(1.87)"
+    },
+    {
+      "model": "nt-500m-human",
+      "f1_macro": "3.93(0.04)"
+    },
+    {
+      "model": "nt-500m-1000g",
+      "f1_macro": "3.91(0.00)"
+    },
+    {
+      "model": "nt-2.5b-1000g",
+      "f1_macro": "3.91(0.00)"
+    },
+    {
+      "model": "nt-2.5b-ms",
+      "f1_macro": "3.91(0.00)"
+    },
+    {
+      "model": "ntv2-50m-ms-3kmer",
+      "f1_macro": "3.91(0.00)"
+    },
+    {
+      "model": "ntv2-50m-ms",
+      "f1_macro": "34.11(26.39)"
+    },
+    {
+      "model": "ntv2-100m-ms",
+      "f1_macro": "17.34(23.27)"
+    },
+    {
+      "model": "ntv2-250m-ms",
+      "f1_macro": "28.43(26.36)"
+    },
+    {
+      "model": "ntv2-500m-ms",
+      "f1_macro": "35.67(27.53)"
+    },
+    {
+      "model": "GENERator-v2-eukaryote-1.2b-base",
+      "f1_macro": "3.91(0.00)"
+    },
+    {
+      "model": "GENERator-v2-eukaryote-3b-base",
+      "f1_macro": "3.91(0.00)"
+    },
+    {
+      "model": "GENERator-v2-prokaryote-1.2b-base",
+      "f1_macro": "3.91(0.00)"
+    },
+    {
+      "model": "GENERator-v2-prokaryote-3b-base",
+      "f1_macro": "3.91(0.00)"
+    },
+    {
+      "model": "AIDO.RNA-650M",
+      "f1_macro": "15.31(13.49)"
+    },
+    {
+      "model": "AIDO.RNA-1.6B",
+      "f1_macro": "12.12(14.22)"
+    },
+    {
+      "model": "AIDO.RNA-650M-CDS",
+      "f1_macro": "36.09(2.54)"
+    },
+    {
+      "model": "AIDO.RNA-1.6B-CDS",
+      "f1_macro": "29.98(2.18)"
+    },
+    {
+      "model": "RNA-FM",
+      "f1_macro": "12.32(14.57)"
+    },
+    {
+      "model": "RiNALMo",
+      "f1_macro": "19.63(9.44)"
+    },
+    {
+      "model": "BiRNA-BERT",
+      "f1_macro": "9.94(10.44)"
+    },
+    {
+      "model": "RNABERT",
+      "f1_macro": "24.76(1.73)"
+    },
+    {
+      "model": "MP-RNA",
+      "f1_macro": "34.68(3.74)"
+    },
+    {
+      "model": "ViroHyena-1m",
+      "f1_macro": "26.39(1.64)"
+    },
+    {
+      "model": "ViroHyena-253m",
+      "f1_macro": "31.19(0.65)"
+    },
+    {
+      "model": "ViroHyena-436k",
+      "f1_macro": "16.73(11.74)"
+    },
+    {
+      "model": "ViroHyena-6m",
+      "f1_macro": "25.28(3.37)"
+    },
+    {
+      "model": "BiLSTM",
+      "f1_macro": "65.11(2.04)"
+    },
+    {
+      "model": "BLAST",
+      "f1_macro": "79.09(0.00)"
+    },
+    {
+      "model": "Kraken2",
+      "f1_macro": "65.52(0.00)"
+    }
+  ],
+  "DNA-host-genus": [
+    {
+      "model": "CNN",
+      "f1_macro": "39.87(6.87)"
+    },
+    {
+      "model": "LucaOne-default-step36M",
+      "f1_macro": "58.35(0.85)"
+    },
+    {
+      "model": "LucaOne-gene-step36.8M",
+      "f1_macro": "55.05(1.66)"
+    },
+    {
+      "model": "LucaVirus-default-step3.8M",
+      "f1_macro": "58.62(2.33)"
+    },
+    {
+      "model": "LucaVirus-gene-step3.8M",
+      "f1_macro": "57.49(0.20)"
+    },
+    {
+      "model": "DNABERT-S",
+      "f1_macro": "57.97(8.96)"
+    },
+    {
+      "model": "GenomeOcean-100M",
+      "f1_macro": "53.41(1.07)"
+    },
+    {
+      "model": "GenomeOcean-500M",
+      "f1_macro": "52.69(0.89)"
+    },
+    {
+      "model": "GenomeOcean-4B",
+      "f1_macro": "56.73(1.74)"
+    },
+    {
+      "model": "Evo-1-8k-base",
+      "f1_macro": "57.70(0.59)"
+    },
+    {
+      "model": "Evo-1-131k-base",
+      "f1_macro": "56.00(0.68)"
+    },
+    {
+      "model": "Evo-1.5-8k-base",
+      "f1_macro": "56.61(0.75)"
+    },
+    {
+      "model": "Evo2-1b-base",
+      "f1_macro": "23.11(0.72)"
+    },
+    {
+      "model": "Evo2-7b-base",
+      "f1_macro": "65.45(1.12)"
+    },
+    {
+      "model": "Evo2-7b",
+      "f1_macro": "62.13(1.70)"
+    },
+    {
+      "model": "Evo2-40b-base",
+      "f1_macro": "63.61(2.79)"
+    },
+    {
+      "model": "Evo2-40b",
+      "f1_macro": "61.35(3.72)"
+    },
+    {
+      "model": "ntv3-8m-pre",
+      "f1_macro": "37.50(0.67)"
+    },
+    {
+      "model": "ntv3-100m-pre",
+      "f1_macro": "52.49(1.73)"
+    },
+    {
+      "model": "ntv3-650m-pre",
+      "f1_macro": "40.85(1.72)"
+    },
+    {
+      "model": "ntv3-100m-post",
+      "f1_macro": "55.69(7.62)"
+    },
+    {
+      "model": "ntv3-650m-post",
+      "f1_macro": "55.39(5.19)"
+    },
+    {
+      "model": "AIDO.DNA-300M",
+      "f1_macro": "57.58(0.84)"
+    },
+    {
+      "model": "AIDO.DNA-7B",
+      "f1_macro": "56.61(2.01)"
+    },
+    {
+      "model": "caduceus-ph",
+      "f1_macro": "44.13(1.31)"
+    },
+    {
+      "model": "caduceus-ps",
+      "f1_macro": "44.42(2.67)"
+    },
+    {
+      "model": "Genos-1.2B",
+      "f1_macro": "10.02(0.00)"
+    },
+    {
+      "model": "Genos-10B",
+      "f1_macro": "32.28(7.72)"
+    },
+    {
+      "model": "Genos-10B-v2",
+      "f1_macro": "17.31(6.46)"
+    },
+    {
+      "model": "hyenadna-tiny-16k",
+      "f1_macro": "34.68(3.53)"
+    },
+    {
+      "model": "hyenadna-tiny-1k",
+      "f1_macro": "34.05(0.89)"
+    },
+    {
+      "model": "hyenadna-small-32k",
+      "f1_macro": "38.44(3.47)"
+    },
+    {
+      "model": "hyenadna-medium-160k",
+      "f1_macro": "35.60(0.62)"
+    },
+    {
+      "model": "hyenadna-medium-450k",
+      "f1_macro": "37.32(3.64)"
+    },
+    {
+      "model": "hyenadna-large-1m",
+      "f1_macro": "35.62(6.77)"
+    },
+    {
+      "model": "DNABERT-2-117M",
+      "f1_macro": "43.30(3.24)"
+    },
+    {
+      "model": "gena-lm-bert-base-t2t",
+      "f1_macro": "53.77(0.42)"
+    },
+    {
+      "model": "gena-lm-bert-large-t2t",
+      "f1_macro": "52.39(0.82)"
+    },
+    {
+      "model": "gena-lm-bigbird-base-t2t",
+      "f1_macro": "53.92(2.34)"
+    },
+    {
+      "model": "GROVER",
+      "f1_macro": "46.95(3.14)"
+    },
+    {
+      "model": "OmniReg-base",
+      "f1_macro": "36.76(1.49)"
+    },
+    {
+      "model": "DNABERT-3",
+      "f1_macro": "45.84(7.56)"
+    },
+    {
+      "model": "DNABERT-4",
+      "f1_macro": "28.42(0.43)"
+    },
+    {
+      "model": "DNABERT-5",
+      "f1_macro": "31.46(1.25)"
+    },
+    {
+      "model": "DNABERT-6",
+      "f1_macro": "45.32(9.49)"
+    },
+    {
+      "model": "nt-500m-human",
+      "f1_macro": "31.73(0.45)"
+    },
+    {
+      "model": "nt-500m-1000g",
+      "f1_macro": "30.91(2.97)"
+    },
+    {
+      "model": "nt-2.5b-1000g",
+      "f1_macro": "29.63(10.09)"
+    },
+    {
+      "model": "nt-2.5b-ms",
+      "f1_macro": "41.13(2.31)"
+    },
+    {
+      "model": "ntv2-50m-ms-3kmer",
+      "f1_macro": "35.55(20.18)"
+    },
+    {
+      "model": "ntv2-50m-ms",
+      "f1_macro": "49.38(13.27)"
+    },
+    {
+      "model": "ntv2-100m-ms",
+      "f1_macro": "42.49(6.12)"
+    },
+    {
+      "model": "ntv2-250m-ms",
+      "f1_macro": "40.05(9.44)"
+    },
+    {
+      "model": "ntv2-500m-ms",
+      "f1_macro": "49.50(2.10)"
+    },
+    {
+      "model": "GENERator-v2-eukaryote-1.2b-base",
+      "f1_macro": "20.01(11.62)"
+    },
+    {
+      "model": "GENERator-v2-eukaryote-3b-base",
+      "f1_macro": "24.35(12.42)"
+    },
+    {
+      "model": "GENERator-v2-prokaryote-1.2b-base",
+      "f1_macro": "10.02(0.00)"
+    },
+    {
+      "model": "GENERator-v2-prokaryote-3b-base",
+      "f1_macro": "14.55(4.01)"
+    },
+    {
+      "model": "AIDO.RNA-650M",
+      "f1_macro": "50.00(0.69)"
+    },
+    {
+      "model": "AIDO.RNA-1.6B",
+      "f1_macro": "47.28(1.13)"
+    },
+    {
+      "model": "AIDO.RNA-650M-CDS",
+      "f1_macro": "54.05(1.66)"
+    },
+    {
+      "model": "AIDO.RNA-1.6B-CDS",
+      "f1_macro": "53.31(2.64)"
+    },
+    {
+      "model": "RNA-FM",
+      "f1_macro": "46.27(0.44)"
+    },
+    {
+      "model": "RiNALMo",
+      "f1_macro": "49.71(0.71)"
+    },
+    {
+      "model": "BiRNA-BERT",
+      "f1_macro": "42.53(0.63)"
+    },
+    {
+      "model": "RNABERT",
+      "f1_macro": "36.31(2.12)"
+    },
+    {
+      "model": "MP-RNA",
+      "f1_macro": "49.78(0.25)"
+    },
+    {
+      "model": "ViroHyena-1m",
+      "f1_macro": "48.15(0.93)"
+    },
+    {
+      "model": "ViroHyena-253m",
+      "f1_macro": "44.43(0.89)"
+    },
+    {
+      "model": "ViroHyena-436k",
+      "f1_macro": "49.12(1.97)"
+    },
+    {
+      "model": "ViroHyena-6m",
+      "f1_macro": "50.12(3.48)"
+    },
+    {
+      "model": "BiLSTM",
+      "f1_macro": "62.90(7.82)"
+    },
+    {
+      "model": "BLAST",
+      "f1_macro": "75.42(0.00)"
+    },
+    {
+      "model": "Kraken2",
+      "f1_macro": "67.05(0.00)"
+    }
+  ],
+  "DNA-host-times": [
+    {
+      "model": "CNN",
+      "f1_macro": "32.62(5.47)"
+    },
+    {
+      "model": "LucaOne-default-step36M",
+      "f1_macro": "46.40(0.54)"
+    },
+    {
+      "model": "LucaOne-gene-step36.8M",
+      "f1_macro": "39.32(10.14)"
+    },
+    {
+      "model": "LucaVirus-default-step3.8M",
+      "f1_macro": "43.93(1.39)"
+    },
+    {
+      "model": "LucaVirus-gene-step3.8M",
+      "f1_macro": "41.12(2.10)"
+    },
+    {
+      "model": "DNABERT-S",
+      "f1_macro": "45.67(7.83)"
+    },
+    {
+      "model": "GenomeOcean-100M",
+      "f1_macro": "35.89(0.94)"
+    },
+    {
+      "model": "GenomeOcean-500M",
+      "f1_macro": "38.29(1.85)"
+    },
+    {
+      "model": "GenomeOcean-4B",
+      "f1_macro": "44.84(1.28)"
+    },
+    {
+      "model": "Evo-1-8k-base",
+      "f1_macro": "42.43(1.83)"
+    },
+    {
+      "model": "Evo-1-131k-base",
+      "f1_macro": "43.27(1.79)"
+    },
+    {
+      "model": "Evo-1.5-8k-base",
+      "f1_macro": "42.65(1.93)"
+    },
+    {
+      "model": "Evo2-1b-base",
+      "f1_macro": "20.91(4.87)"
+    },
+    {
+      "model": "Evo2-7b-base",
+      "f1_macro": "43.52(0.51)"
+    },
+    {
+      "model": "Evo2-7b",
+      "f1_macro": "46.77(5.20)"
+    },
+    {
+      "model": "Evo2-40b-base",
+      "f1_macro": "44.50(0.90)"
+    },
+    {
+      "model": "Evo2-40b",
+      "f1_macro": "49.62(5.71)"
+    },
+    {
+      "model": "ntv3-8m-pre",
+      "f1_macro": "16.11(0.00)"
+    },
+    {
+      "model": "ntv3-100m-pre",
+      "f1_macro": "42.97(2.76)"
+    },
+    {
+      "model": "ntv3-650m-pre",
+      "f1_macro": "40.09(4.77)"
+    },
+    {
+      "model": "ntv3-100m-post",
+      "f1_macro": "39.79(3.58)"
+    },
+    {
+      "model": "ntv3-650m-post",
+      "f1_macro": "39.36(0.73)"
+    },
+    {
+      "model": "AIDO.DNA-300M",
+      "f1_macro": "44.34(1.25)"
+    },
+    {
+      "model": "AIDO.DNA-7B",
+      "f1_macro": "45.13(1.25)"
+    },
+    {
+      "model": "caduceus-ph",
+      "f1_macro": "31.59(0.73)"
+    },
+    {
+      "model": "caduceus-ps",
+      "f1_macro": "16.11(0.00)"
+    },
+    {
+      "model": "Genos-1.2B",
+      "f1_macro": "16.11(0.00)"
+    },
+    {
+      "model": "Genos-10B",
+      "f1_macro": "16.11(0.00)"
+    },
+    {
+      "model": "Genos-10B-v2",
+      "f1_macro": "16.11(0.00)"
+    },
+    {
+      "model": "hyenadna-tiny-16k",
+      "f1_macro": "16.45(0.59)"
+    },
+    {
+      "model": "hyenadna-tiny-1k",
+      "f1_macro": "22.16(10.47)"
+    },
+    {
+      "model": "hyenadna-small-32k",
+      "f1_macro": "22.63(11.29)"
+    },
+    {
+      "model": "hyenadna-medium-160k",
+      "f1_macro": "16.45(0.59)"
+    },
+    {
+      "model": "hyenadna-medium-450k",
+      "f1_macro": "30.52(12.67)"
+    },
+    {
+      "model": "hyenadna-large-1m",
+      "f1_macro": "16.11(0.00)"
+    },
+    {
+      "model": "DNABERT-2-117M",
+      "f1_macro": "26.16(9.15)"
+    },
+    {
+      "model": "gena-lm-bert-base-t2t",
+      "f1_macro": "34.44(1.81)"
+    },
+    {
+      "model": "gena-lm-bert-large-t2t",
+      "f1_macro": "37.98(1.25)"
+    },
+    {
+      "model": "gena-lm-bigbird-base-t2t",
+      "f1_macro": "40.02(2.17)"
+    },
+    {
+      "model": "GROVER",
+      "f1_macro": "34.93(2.18)"
+    },
+    {
+      "model": "OmniReg-base",
+      "f1_macro": "28.97(5.23)"
+    },
+    {
+      "model": "DNABERT-3",
+      "f1_macro": "34.06(2.76)"
+    },
+    {
+      "model": "DNABERT-4",
+      "f1_macro": "16.11(0.00)"
+    },
+    {
+      "model": "DNABERT-5",
+      "f1_macro": "27.36(5.01)"
+    },
+    {
+      "model": "DNABERT-6",
+      "f1_macro": "35.11(2.11)"
+    },
+    {
+      "model": "nt-500m-human",
+      "f1_macro": "26.13(7.95)"
+    },
+    {
+      "model": "nt-500m-1000g",
+      "f1_macro": "16.11(0.00)"
+    },
+    {
+      "model": "nt-2.5b-1000g",
+      "f1_macro": "22.58(11.20)"
+    },
+    {
+      "model": "nt-2.5b-ms",
+      "f1_macro": "40.47(8.77)"
+    },
+    {
+      "model": "ntv2-50m-ms-3kmer",
+      "f1_macro": "28.05(11.20)"
+    },
+    {
+      "model": "ntv2-50m-ms",
+      "f1_macro": "26.43(9.35)"
+    },
+    {
+      "model": "ntv2-100m-ms",
+      "f1_macro": "32.24(14.07)"
+    },
+    {
+      "model": "ntv2-250m-ms",
+      "f1_macro": "33.47(15.08)"
+    },
+    {
+      "model": "ntv2-500m-ms",
+      "f1_macro": "35.73(17.16)"
+    },
+    {
+      "model": "GENERator-v2-eukaryote-1.2b-base",
+      "f1_macro": "16.11(0.00)"
+    },
+    {
+      "model": "GENERator-v2-eukaryote-3b-base",
+      "f1_macro": "18.37(1.96)"
+    },
+    {
+      "model": "GENERator-v2-prokaryote-1.2b-base",
+      "f1_macro": "16.11(0.00)"
+    },
+    {
+      "model": "GENERator-v2-prokaryote-3b-base",
+      "f1_macro": "16.11(0.00)"
+    },
+    {
+      "model": "AIDO.RNA-650M",
+      "f1_macro": "41.76(1.27)"
+    },
+    {
+      "model": "AIDO.RNA-1.6B",
+      "f1_macro": "43.39(2.57)"
+    },
+    {
+      "model": "AIDO.RNA-650M-CDS",
+      "f1_macro": "42.27(3.20)"
+    },
+    {
+      "model": "AIDO.RNA-1.6B-CDS",
+      "f1_macro": "44.74(0.83)"
+    },
+    {
+      "model": "RNA-FM",
+      "f1_macro": "30.19(12.40)"
+    },
+    {
+      "model": "RiNALMo",
+      "f1_macro": "37.68(5.29)"
+    },
+    {
+      "model": "BiRNA-BERT",
+      "f1_macro": "35.62(1.91)"
+    },
+    {
+      "model": "RNABERT",
+      "f1_macro": "20.97(1.18)"
+    },
+    {
+      "model": "MP-RNA",
+      "f1_macro": "44.32(1.33)"
+    },
+    {
+      "model": "ViroHyena-1m",
+      "f1_macro": "36.03(2.05)"
+    },
+    {
+      "model": "ViroHyena-253m",
+      "f1_macro": "40.42(1.82)"
+    },
+    {
+      "model": "ViroHyena-436k",
+      "f1_macro": "33.60(3.43)"
+    },
+    {
+      "model": "ViroHyena-6m",
+      "f1_macro": "42.59(3.47)"
+    },
+    {
+      "model": "BiLSTM",
+      "f1_macro": "56.48(0.80)"
+    },
+    {
+      "model": "BLAST",
+      "f1_macro": "25.81(0.00)"
+    },
+    {
+      "model": "Kraken2",
+      "f1_macro": "35.71(0.00)"
+    }
+  ],
+  "ALL-host-genus": [
+    {
+      "model": "CNN",
+      "f1_macro": "69.29(2.51)"
+    },
+    {
+      "model": "LucaOne-default-step36M",
+      "f1_macro": "81.97(0.66)"
+    },
+    {
+      "model": "LucaOne-gene-step36.8M",
+      "f1_macro": "77.23(0.90)"
+    },
+    {
+      "model": "LucaVirus-default-step3.8M",
+      "f1_macro": "84.56(1.28)"
+    },
+    {
+      "model": "LucaVirus-gene-step3.8M",
+      "f1_macro": "80.24(2.13)"
+    },
+    {
+      "model": "DNABERT-S",
+      "f1_macro": "80.17(0.74)"
+    },
+    {
+      "model": "GenomeOcean-100M",
+      "f1_macro": "79.34(0.97)"
+    },
+    {
+      "model": "GenomeOcean-500M",
+      "f1_macro": "74.21(0.40)"
+    },
+    {
+      "model": "GenomeOcean-4B",
+      "f1_macro": "81.67(0.94)"
+    },
+    {
+      "model": "Evo-1-8k-base",
+      "f1_macro": "71.03(0.58)"
+    },
+    {
+      "model": "Evo-1-131k-base",
+      "f1_macro": "71.87(0.46)"
+    },
+    {
+      "model": "Evo-1.5-8k-base",
+      "f1_macro": "71.38(0.32)"
+    },
+    {
+      "model": "Evo2-1b-base",
+      "f1_macro": "28.08(5.24)"
+    },
+    {
+      "model": "Evo2-7b-base",
+      "f1_macro": "78.93(3.40)"
+    },
+    {
+      "model": "Evo2-7b",
+      "f1_macro": "82.00(0.63)"
+    },
+    {
+      "model": "Evo2-40b-base",
+      "f1_macro": "80.82(1.17)"
+    },
+    {
+      "model": "Evo2-40b",
+      "f1_macro": "81.27(0.58)"
+    },
+    {
+      "model": "ntv3-8m-pre",
+      "f1_macro": "45.89(3.38)"
+    },
+    {
+      "model": "ntv3-100m-pre",
+      "f1_macro": "76.12(3.35)"
+    },
+    {
+      "model": "ntv3-650m-pre",
+      "f1_macro": "50.26(2.93)"
+    },
+    {
+      "model": "ntv3-100m-post",
+      "f1_macro": "74.72(1.85)"
+    },
+    {
+      "model": "ntv3-650m-post",
+      "f1_macro": "77.12(2.13)"
+    },
+    {
+      "model": "AIDO.DNA-300M",
+      "f1_macro": "82.82(1.15)"
+    },
+    {
+      "model": "AIDO.DNA-7B",
+      "f1_macro": "80.65(1.23)"
+    },
+    {
+      "model": "caduceus-ph",
+      "f1_macro": "55.21(1.34)"
+    },
+    {
+      "model": "caduceus-ps",
+      "f1_macro": "54.57(5.57)"
+    },
+    {
+      "model": "Genos-1.2B",
+      "f1_macro": "21.51(13.25)"
+    },
+    {
+      "model": "Genos-10B",
+      "f1_macro": "56.49(1.28)"
+    },
+    {
+      "model": "Genos-10B-v2",
+      "f1_macro": "29.58(12.93)"
+    },
+    {
+      "model": "hyenadna-tiny-16k",
+      "f1_macro": "56.72(2.73)"
+    },
+    {
+      "model": "hyenadna-tiny-1k",
+      "f1_macro": "53.49(9.61)"
+    },
+    {
+      "model": "hyenadna-small-32k",
+      "f1_macro": "56.97(4.03)"
+    },
+    {
+      "model": "hyenadna-medium-160k",
+      "f1_macro": "59.69(5.49)"
+    },
+    {
+      "model": "hyenadna-medium-450k",
+      "f1_macro": "58.74(9.43)"
+    },
+    {
+      "model": "hyenadna-large-1m",
+      "f1_macro": "53.64(7.84)"
+    },
+    {
+      "model": "DNABERT-2-117M",
+      "f1_macro": "49.48(1.56)"
+    },
+    {
+      "model": "gena-lm-bert-base-t2t",
+      "f1_macro": "79.57(1.17)"
+    },
+    {
+      "model": "gena-lm-bert-large-t2t",
+      "f1_macro": "77.55(2.81)"
+    },
+    {
+      "model": "gena-lm-bigbird-base-t2t",
+      "f1_macro": "77.38(1.12)"
+    },
+    {
+      "model": "GROVER",
+      "f1_macro": "66.98(3.55)"
+    },
+    {
+      "model": "OmniReg-base",
+      "f1_macro": "60.53(6.44)"
+    },
+    {
+      "model": "DNABERT-3",
+      "f1_macro": "56.13(3.52)"
+    },
+    {
+      "model": "DNABERT-4",
+      "f1_macro": "44.30(4.98)"
+    },
+    {
+      "model": "DNABERT-5",
+      "f1_macro": "53.15(0.80)"
+    },
+    {
+      "model": "DNABERT-6",
+      "f1_macro": "61.97(1.87)"
+    },
+    {
+      "model": "nt-500m-human",
+      "f1_macro": "54.80(5.35)"
+    },
+    {
+      "model": "nt-500m-1000g",
+      "f1_macro": "50.37(7.70)"
+    },
+    {
+      "model": "nt-2.5b-1000g",
+      "f1_macro": "41.73(6.68)"
+    },
+    {
+      "model": "nt-2.5b-ms",
+      "f1_macro": "52.09(14.56)"
+    },
+    {
+      "model": "ntv2-50m-ms-3kmer",
+      "f1_macro": "65.16(4.57)"
+    },
+    {
+      "model": "ntv2-50m-ms",
+      "f1_macro": "66.91(11.04)"
+    },
+    {
+      "model": "ntv2-100m-ms",
+      "f1_macro": "65.08(8.06)"
+    },
+    {
+      "model": "ntv2-250m-ms",
+      "f1_macro": "66.49(13.85)"
+    },
+    {
+      "model": "ntv2-500m-ms",
+      "f1_macro": "60.35(21.56)"
+    },
+    {
+      "model": "GENERator-v2-eukaryote-1.2b-base",
+      "f1_macro": "9.48(5.56)"
+    },
+    {
+      "model": "GENERator-v2-eukaryote-3b-base",
+      "f1_macro": "8.63(4.13)"
+    },
+    {
+      "model": "GENERator-v2-prokaryote-1.2b-base",
+      "f1_macro": "17.89(10.10)"
+    },
+    {
+      "model": "GENERator-v2-prokaryote-3b-base",
+      "f1_macro": "25.89(12.32)"
+    },
+    {
+      "model": "AIDO.RNA-650M",
+      "f1_macro": "74.60(1.86)"
+    },
+    {
+      "model": "AIDO.RNA-1.6B",
+      "f1_macro": "69.24(1.81)"
+    },
+    {
+      "model": "AIDO.RNA-650M-CDS",
+      "f1_macro": "79.29(0.42)"
+    },
+    {
+      "model": "AIDO.RNA-1.6B-CDS",
+      "f1_macro": "77.74(1.30)"
+    },
+    {
+      "model": "RNA-FM",
+      "f1_macro": "67.87(9.89)"
+    },
+    {
+      "model": "RiNALMo",
+      "f1_macro": "61.64(1.32)"
+    },
+    {
+      "model": "BiRNA-BERT",
+      "f1_macro": "64.71(1.59)"
+    },
+    {
+      "model": "RNABERT",
+      "f1_macro": "44.35(1.37)"
+    },
+    {
+      "model": "MP-RNA",
+      "f1_macro": "77.14(1.50)"
+    },
+    {
+      "model": "ViroHyena-1m",
+      "f1_macro": "60.88(4.09)"
+    },
+    {
+      "model": "ViroHyena-253m",
+      "f1_macro": "65.33(4.07)"
+    },
+    {
+      "model": "ViroHyena-436k",
+      "f1_macro": "65.08(5.91)"
+    },
+    {
+      "model": "ViroHyena-6m",
+      "f1_macro": "72.05(3.70)"
+    },
+    {
+      "model": "BiLSTM",
+      "f1_macro": "84.40(0.98)"
+    },
+    {
+      "model": "BLAST",
+      "f1_macro": "92.50(0.00)"
+    },
+    {
+      "model": "Kraken2",
+      "f1_macro": "61.70(0.00)"
+    }
+  ],
+  "ALL-host-times": [
+    {
+      "model": "CNN",
+      "f1_macro": "25.16(5.52)"
+    },
+    {
+      "model": "LucaOne-default-step36M",
+      "f1_macro": "47.52(0.39)"
+    },
+    {
+      "model": "LucaOne-gene-step36.8M",
+      "f1_macro": "44.49(1.33)"
+    },
+    {
+      "model": "LucaVirus-default-step3.8M",
+      "f1_macro": "54.84(1.54)"
+    },
+    {
+      "model": "LucaVirus-gene-step3.8M",
+      "f1_macro": "45.01(2.93)"
+    },
+    {
+      "model": "DNABERT-S",
+      "f1_macro": "47.41(0.88)"
+    },
+    {
+      "model": "GenomeOcean-100M",
+      "f1_macro": "40.27(5.44)"
+    },
+    {
+      "model": "GenomeOcean-500M",
+      "f1_macro": "37.67(1.62)"
+    },
+    {
+      "model": "GenomeOcean-4B",
+      "f1_macro": "48.75(1.14)"
+    },
+    {
+      "model": "Evo-1-8k-base",
+      "f1_macro": "33.40(0.58)"
+    },
+    {
+      "model": "Evo-1-131k-base",
+      "f1_macro": "35.48(2.51)"
+    },
+    {
+      "model": "Evo-1.5-8k-base",
+      "f1_macro": "35.91(1.14)"
+    },
+    {
+      "model": "Evo2-1b-base",
+      "f1_macro": "12.96(0.30)"
+    },
+    {
+      "model": "Evo2-7b-base",
+      "f1_macro": "48.32(0.72)"
+    },
+    {
+      "model": "Evo2-7b",
+      "f1_macro": "47.60(0.29)"
+    },
+    {
+      "model": "Evo2-40b-base",
+      "f1_macro": "47.39(0.66)"
+    },
+    {
+      "model": "Evo2-40b",
+      "f1_macro": "45.71(1.19)"
+    },
+    {
+      "model": "ntv3-8m-pre",
+      "f1_macro": "0.39(0.24)"
+    },
+    {
+      "model": "ntv3-100m-pre",
+      "f1_macro": "29.81(1.32)"
+    },
+    {
+      "model": "ntv3-650m-pre",
+      "f1_macro": "6.21(9.96)"
+    },
+    {
+      "model": "ntv3-100m-post",
+      "f1_macro": "33.02(1.25)"
+    },
+    {
+      "model": "ntv3-650m-post",
+      "f1_macro": "36.72(2.26)"
+    },
+    {
+      "model": "AIDO.DNA-300M",
+      "f1_macro": "46.96(2.85)"
+    },
+    {
+      "model": "AIDO.DNA-7B",
+      "f1_macro": "47.47(1.38)"
+    },
+    {
+      "model": "caduceus-ph",
+      "f1_macro": "21.68(4.35)"
+    },
+    {
+      "model": "caduceus-ps",
+      "f1_macro": "19.54(2.97)"
+    },
+    {
+      "model": "Genos-1.2B",
+      "f1_macro": "0.25(0.00)"
+    },
+    {
+      "model": "Genos-10B",
+      "f1_macro": "5.54(9.15)"
+    },
+    {
+      "model": "Genos-10B-v2",
+      "f1_macro": "5.24(8.64)"
+    },
+    {
+      "model": "hyenadna-tiny-16k",
+      "f1_macro": "17.75(1.82)"
+    },
+    {
+      "model": "hyenadna-tiny-1k",
+      "f1_macro": "6.44(10.71)"
+    },
+    {
+      "model": "hyenadna-small-32k",
+      "f1_macro": "12.95(11.06)"
+    },
+    {
+      "model": "hyenadna-medium-160k",
+      "f1_macro": "5.87(9.73)"
+    },
+    {
+      "model": "hyenadna-medium-450k",
+      "f1_macro": "11.96(10.15)"
+    },
+    {
+      "model": "hyenadna-large-1m",
+      "f1_macro": "5.65(8.99)"
+    },
+    {
+      "model": "DNABERT-2-117M",
+      "f1_macro": "9.02(8.07)"
+    },
+    {
+      "model": "gena-lm-bert-base-t2t",
+      "f1_macro": "42.34(0.41)"
+    },
+    {
+      "model": "gena-lm-bert-large-t2t",
+      "f1_macro": "39.83(4.86)"
+    },
+    {
+      "model": "gena-lm-bigbird-base-t2t",
+      "f1_macro": "37.92(1.47)"
+    },
+    {
+      "model": "GROVER",
+      "f1_macro": "25.55(0.78)"
+    },
+    {
+      "model": "OmniReg-base",
+      "f1_macro": "18.15(4.24)"
+    },
+    {
+      "model": "DNABERT-3",
+      "f1_macro": "16.42(4.20)"
+    },
+    {
+      "model": "DNABERT-4",
+      "f1_macro": "12.51(2.83)"
+    },
+    {
+      "model": "DNABERT-5",
+      "f1_macro": "14.96(0.87)"
+    },
+    {
+      "model": "DNABERT-6",
+      "f1_macro": "24.60(2.21)"
+    },
+    {
+      "model": "nt-500m-human",
+      "f1_macro": "9.64(7.81)"
+    },
+    {
+      "model": "nt-500m-1000g",
+      "f1_macro": "0.39(0.24)"
+    },
+    {
+      "model": "nt-2.5b-1000g",
+      "f1_macro": "8.21(12.11)"
+    },
+    {
+      "model": "nt-2.5b-ms",
+      "f1_macro": "21.18(3.47)"
+    },
+    {
+      "model": "ntv2-50m-ms-3kmer",
+      "f1_macro": "15.65(13.99)"
+    },
+    {
+      "model": "ntv2-50m-ms",
+      "f1_macro": "25.20(21.60)"
+    },
+    {
+      "model": "ntv2-100m-ms",
+      "f1_macro": "23.08(19.87)"
+    },
+    {
+      "model": "ntv2-250m-ms",
+      "f1_macro": "24.43(21.13)"
+    },
+    {
+      "model": "ntv2-500m-ms",
+      "f1_macro": "24.17(20.84)"
+    },
+    {
+      "model": "GENERator-v2-eukaryote-1.2b-base",
+      "f1_macro": "0.25(0.00)"
+    },
+    {
+      "model": "GENERator-v2-eukaryote-3b-base",
+      "f1_macro": "0.39(0.24)"
+    },
+    {
+      "model": "GENERator-v2-prokaryote-1.2b-base",
+      "f1_macro": "0.39(0.24)"
+    },
+    {
+      "model": "GENERator-v2-prokaryote-3b-base",
+      "f1_macro": "0.39(0.24)"
+    },
+    {
+      "model": "AIDO.RNA-650M",
+      "f1_macro": "33.99(0.73)"
+    },
+    {
+      "model": "AIDO.RNA-1.6B",
+      "f1_macro": "30.32(3.20)"
+    },
+    {
+      "model": "AIDO.RNA-650M-CDS",
+      "f1_macro": "41.85(2.75)"
+    },
+    {
+      "model": "AIDO.RNA-1.6B-CDS",
+      "f1_macro": "38.19(1.97)"
+    },
+    {
+      "model": "RNA-FM",
+      "f1_macro": "25.59(4.37)"
+    },
+    {
+      "model": "RiNALMo",
+      "f1_macro": "23.84(8.19)"
+    },
+    {
+      "model": "BiRNA-BERT",
+      "f1_macro": "21.00(3.82)"
+    },
+    {
+      "model": "RNABERT",
+      "f1_macro": "15.98(1.59)"
+    },
+    {
+      "model": "MP-RNA",
+      "f1_macro": "36.61(0.11)"
+    },
+    {
+      "model": "ViroHyena-1m",
+      "f1_macro": "21.04(1.49)"
+    },
+    {
+      "model": "ViroHyena-253m",
+      "f1_macro": "30.70(2.62)"
+    },
+    {
+      "model": "ViroHyena-436k",
+      "f1_macro": "19.85(3.12)"
+    },
+    {
+      "model": "ViroHyena-6m",
+      "f1_macro": "25.31(2.48)"
+    },
+    {
+      "model": "BiLSTM",
+      "f1_macro": "44.69(1.31)"
+    },
+    {
+      "model": "BLAST",
+      "f1_macro": "65.55(0.00)"
+    },
+    {
+      "model": "Kraken2",
+      "f1_macro": "69.41(0.00)"
+    }
+  ]
+}

@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>ViroBench</title>
+<link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+<link rel="stylesheet" href="assets/css/index.css?v=20260429b" />
+</head>
+<body>
+<nav class="nav">
+  <div class="nav-inner">
+    <div class="brand" data-jump="home">
+      <div class="mark" aria-hidden="true">
+        <svg viewBox="0 0 1024 1024" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="M480.7168 71.68l-3.584 8.072533c-32.768 72.9088-47.9744 73.591467-107.144533 14.9504-21.674667-21.4528-58.453333-5.905067-58.1632 24.576l0.034133 12.356267c-0.375467 74.513067-13.192533 79.018667-88.234667 47.223467-28.2624-11.946667-56.7296 16.503467-44.765866 44.7488l4.727466 11.349333c27.886933 68.642133 17.681067 77.653333-64.3072 76.868267-30.481067-0.290133-46.0288 36.5056-24.576 58.1632l6.058667 6.161066c54.3744 56.1152 48.981333 70.4512-29.098667 104.567467 27.2896 11.9296 27.2896 50.6368 0 62.5664l8.0896 3.584c72.9088 32.768 73.591467 47.9744 14.9504 107.144533-21.4528 21.674667-5.905067 58.453333 24.576 58.1632l12.356267-0.034133c74.513067 0.375467 79.018667 13.192533 47.223467 88.234667-11.946667 28.2624 16.503467 56.7296 44.7488 44.765866l11.349333-4.727466c68.642133-27.886933 77.653333-17.681067 76.868267 64.3072-0.290133 30.481067 36.5056 46.0288 58.1632 24.576l6.161066-6.058667c56.1152-54.3744 70.4512-48.981333 104.567467 29.098667 11.9296 27.2896 50.6368 27.2896 62.5664 0l3.584-8.0896c32.768-72.9088 47.9744-73.591467 107.144533-14.9504 21.674667 21.4528 58.453333 5.905067 58.1632-24.576l-0.034133-12.356267c0.375467-74.513067 13.192533-79.018667 88.234667-47.223467 28.2624 11.946667 56.7296-16.503467 44.765866-44.7488l-4.727466-11.349333c-27.886933-68.625067-17.664-77.653333 64.3072-76.868267 30.481067 0.290133 46.0288-36.5056 24.576-58.1632l-6.058667-6.161066c-54.3744-56.1152-48.981333-70.4512 29.098667-104.567467 27.2896-11.9296 27.2896-50.6368 0-62.5664l-8.0896-3.584c-72.9088-32.768-73.591467-47.9744-14.9504-107.144533 21.4528-21.674667 5.905067-58.453333-24.576-58.1632l-12.356267 0.034133c-74.513067-0.392533-79.018667-13.192533-47.223467-88.234667 11.946667-28.2624-16.503467-56.7296-44.7488-44.765866l-11.349333 4.727466c-68.642133 27.886933-77.653333 17.681067-76.868267-64.3072 0.290133-30.481067-36.5056-46.0288-58.1632-24.576l-6.161066 6.058667c-56.1152 54.3744-70.4512 48.981333-104.567467-29.098667-11.9296-27.2896-50.6368-27.2896-62.5664 0zM512 155.818667l1.928533 2.645333c36.744533 49.476267 80.110933 59.2896 131.754667 29.576533l4.1472-2.491733 0.8704 3.703467c14.08 57.634133 50.056533 81.8688 108.578133 73.028266l2.901334-0.477866-0.4608 2.901333c-8.823467 58.538667 15.394133 94.5152 73.045333 108.5952l3.669333 0.853333-0.1024 0.187734c-32.5632 53.384533-23.534933 98.048 27.204267 135.7312l2.628267 1.928533-2.628267 1.928533c-49.476267 36.744533-59.2896 80.110933-29.576533 131.754667l2.474666 4.1472-3.669333 0.8704c-57.6512 14.08-81.8688 50.056533-73.045333 108.578133l0.4608 2.901334-2.901334-0.4608c-58.5216-8.840533-94.498133 15.394133-108.578133 73.045333l-0.8704 3.669333-0.170667-0.1024c-53.384533-32.5632-98.048-23.534933-135.7312 27.204267l-1.928533 2.628267-1.928533-2.628267c-36.744533-49.476267-80.110933-59.2896-131.754667-29.576533l-4.164267 2.474666-0.853333-3.6864c-14.08-57.634133-50.056533-81.8688-108.578133-73.028266l-2.9184 0.4608 0.477866-2.901334c8.840533-58.5216-15.394133-94.498133-73.045333-108.578133l-3.6864-0.8704 0.119467-0.170667c32.5632-53.384533 23.534933-98.048-27.204267-135.7312L155.818667 512l2.645333-1.928533c49.476267-36.744533 59.2896-80.110933 29.576533-131.754667l-2.491733-4.164267 3.703467-0.853333c57.634133-14.08 81.8688-50.056533 73.028266-108.578133l-0.477866-2.9184 2.901333 0.477866c58.538667 8.840533 94.5152-15.394133 108.5952-73.045333l0.853333-3.6864 0.187734 0.119467c53.384533 32.5632 98.048 23.534933 135.7312-27.204267L512 155.818667z" fill="#444444"/>
+          <path d="M326.621867 541.781333c-2.901333 0-5.888-0.273067-8.874667-0.8192-24.9856-4.625067-42.069333-27.306667-45.994667-47.325866-4.096-20.753067 4.864-38.997333 23.927467-48.827734a49.220267 49.220267 0 0 1 43.195733-0.853333c21.469867 9.8304 33.4848 32.8192 34.269867 50.466133a42.871467 42.871467 0 0 1-9.216 29.013334 47.36 47.36 0 0 1-37.307733 18.346666" fill="#444444"/>
+          <path d="M521.386667 419.805867c-62.190933 70.212267-41.9328 162.645333 28.893866 213.947733 72.874667 52.770133 163.259733 35.1744 198.536534-58.077867 10.990933-28.9792 11.298133-60.023467 1.9456-89.156266-30.651733-95.880533-152.183467-148.667733-226.372267-69.973334l-2.986667 3.259734z m164.352 87.534933c4.778667 14.7968 4.608 29.986133-0.750934 44.151467-18.090667 47.786667-55.773867 55.125333-94.651733 26.965333-40.567467-29.371733-50.807467-76.151467-17.834667-113.373867 33.092267-37.358933 96.4096-10.410667 113.2544 42.257067z" fill="#00B386"/>
+        </svg>
+      </div>
+      <div><div class="word"><span class="word-bench">ViroBench</span></div><div class="tagline">nucleotide foundation models</div></div>
+    </div>
+    <div class="nav-tabs" id="navTabs">
+      <button class="nav-btn on" data-page="home">Leaderboard</button>
+      <button class="nav-btn" data-page="tasks">Task Matrix</button>
+      <button class="nav-btn" data-page="blog">Blog</button>
+    </div>
+    <div class="nav-meta">
+      <span class="update-stamp">Updated 2026-04-28</span>
+      <a class="github-link" href="https://github.com/QIANJINYDX/ViroBench" target="_blank" rel="noopener noreferrer" aria-label="Open ViroBench on GitHub" title="ViroBench GitHub">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M12 .5C5.65.5.5 5.74.5 12.2c0 5.17 3.29 9.56 7.86 11.1.58.11.79-.25.79-.56 0-.28-.01-1.03-.02-2.02-3.2.71-3.88-1.57-3.88-1.57-.52-1.35-1.27-1.7-1.27-1.7-1.04-.72.08-.71.08-.71 1.15.08 1.75 1.2 1.75 1.2 1.02 1.77 2.67 1.26 3.32.97.1-.75.4-1.26.72-1.55-2.55-.29-5.24-1.3-5.24-5.8 0-1.28.45-2.33 1.19-3.15-.12-.29-.52-1.46.11-3.04 0 0 .97-.32 3.18 1.2a10.93 10.93 0 0 1 5.79 0c2.2-1.52 3.17-1.2 3.17-1.2.63 1.58.23 2.75.11 3.04.74.82 1.19 1.87 1.19 3.15 0 4.51-2.7 5.51-5.27 5.79.41.36.77 1.08.77 2.18 0 1.58-.01 2.86-.01 3.25 0 .31.21.68.8.56A11.72 11.72 0 0 0 23.5 12.2C23.5 5.74 18.35.5 12 .5Z"/>
+        </svg>
+      </a>
+      <a class="github-link hf-link" href="https://huggingface.co/datasets/YDXX/ViroBench" target="_blank" rel="noopener noreferrer" aria-label="Open ViroBench on Hugging Face" title="ViroBench Hugging Face">
+        <span aria-hidden="true">🤗</span>
+      </a>
+    </div>
+  </div>
+</nav>
+<main class="wrap">
+  <section class="page on" id="page-home">
+    <div class="hero">
+      <div class="fade-in">
+        <div class="eyebrow">Benchmarking NFMs on Viral Genomics</div>
+        <h1><em>ViroBench</em><br/>for nucleotide foundation models</h1>
+        <p>ViroBench is an interactive benchmark platform for evaluating nucleotide foundation models across diverse viral genomics tasks.</p>
+        <div class="hero-actions"><button class="btn primary" data-scroll-leader>Explore leaderboard →</button><button class="btn secondary" data-page-go="tasks">View task matrix</button></div>
+      </div>
+      <div class="hero-panel fade-in delay-1">
+        <div class="hero-card">
+          <div class="eyebrow" style="margin-bottom:0">Dual-axis evaluation</div>
+          <div class="helix">
+            <div id="dnaLottie" class="dna-lottie" aria-hidden="true"></div>
+          </div>
+          <div class="hero-mini">
+            <div class="mini"><div class="v">4</div><div class="l">Task types</div></div>
+            <div class="mini"><div class="v">18</div><div class="l">Scenarios</div></div>
+            <div class="mini"><div class="v">66</div><div class="l">NFMs</div></div>
+            <div class="mini"><div class="v">58K</div><div class="l">Viral samples</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="stats-grid fade-in delay-2" id="statGrid"></div>
+    <div class="section-title" id="leaderboard"><h2>Interactive leaderboard</h2></div>
+    <div class="dash-grid fade-in delay-3">
+      <div class="panel">
+        <div class="panel-head"><div class="panel-title">Model rankings</div><div class="pill-tabs" id="taskPills"></div></div>
+        <div class="controls" id="controls"></div>
+        <div class="table-wrap"><table class="leader"><thead id="leaderHead"></thead><tbody id="leaderBody"></tbody></table></div>
+      </div>
+      <div class="panel">
+        <div class="panel-head"><div class="panel-title">Animated chart</div></div>
+        <div class="chart-card"><div class="canvas-wrap"><canvas id="barChart"></canvas></div><div class="hint" id="chartHint"></div></div>
+        <div class="detail-card" id="modelDetail"></div>
+      </div>
+    </div>
+    <div class="section-title"><h2>Cross-task map</h2></div>
+    <div class="panel fade-in delay-4">
+      <div class="panel-head">
+        <div class="panel-title">Cross-task scatter analysis</div>
+        <div class="mono" id="scatterHeadHint" style="font-size:11px;color:var(--muted)">Click legend dots to hide/show model families</div>
+      </div>
+      <div class="chart-card">
+        <div class="scatter-toolbar">
+          <div class="control"><label>X axis task</label><select id="scatterXSel"></select></div>
+          <div class="control"><label>Y axis task</label><select id="scatterYSel"></select></div>
+          <div class="control" id="scatterCdsScenarioControl"><label>Task4 scenario</label><select id="scatterCdsScenarioSel"></select></div>
+          <div class="control" id="scatterCdsMetricControl"><label>Task4 metric</label><select id="scatterCdsMetricSel"></select></div>
+        </div>
+        <div class="scatter-legend" id="scatterLegend"></div>
+        <div class="canvas-wrap" style="height:420px"><canvas id="scatterChart"></canvas><div id="scatterTooltip" class="scatter-tooltip"></div></div>
+        <div class="hint" id="scatterHint">Each point is a model. X/Y axes are task-level normalized scores.</div>
+      </div>
+    </div>
+  </section>
+  <section class="page" id="page-tasks">
+    <div class="hero" style="grid-template-columns:1fr; padding-bottom:28px"><div><div class="eyebrow">Task taxonomy</div><h1 style="font-size:clamp(42px,6vw,76px)">Four task types,<br/><em>eighteen scenarios</em></h1><p>ViroBench organizes viral genomics evaluation into classification tasks for biological understanding and generation tasks for sequence modeling, making the paper's benchmark design directly explorable on the web.</p></div></div>
+    <div class="task-browser" id="taskBrowser"></div>
+  </section>
+  <section class="page" id="page-blog">
+    <div class="blog-pg-wrap">
+    <article class="blog-wrap fade-in">
+      <div class="blog-eyebrow">Research · April 2026</div>
+      <div class="blog-title">When Nucleotide Foundation Models Meet<br><em>Viral Genomics</em></div>
+      <div class="blog-meta">ViroBench Team · Research · 5 min read</div>
+      <div class="blog-body">
+          <h2>The Gap Between General Genomics and Viral Reality</h2>
+          <p>Nucleotide foundation models are rapidly becoming a central tool for biological sequence modeling. They can read long DNA or RNA sequences, transfer across species, and support both discriminative and generative tasks. But viral genomics poses a harder question: can these models truly understand viral sequences under realistic evolutionary, taxonomic, and temporal shifts?</p>
+          <p>Viruses are not just another subset of biological sequences. They evolve quickly, span diverse genome types, and often appear in long-tailed, rapidly changing distributions. A model that performs well on general genomic benchmarks may still fail when asked to distinguish closely related viral taxa, predict host categories, or remain robust to newly recorded viral sequences.</p>
+          <p>We built ViroBench to make this gap measurable.</p>
+          <blockquote>ViroBench asks a practical question: do nucleotide foundation models retain reliable viral understanding under taxonomic, evolutionary, and temporal shift, rather than only on easier in-distribution settings?</blockquote>
+          <div class="blog-stat-strip">
+            <div class="blog-stat"><div class="blog-stat-val">58,314</div><div class="blog-stat-label">Viral Samples</div></div>
+            <div class="blog-stat"><div class="blog-stat-val">4</div><div class="blog-stat-label">Task Families</div></div>
+            <div class="blog-stat"><div class="blog-stat-val">2</div><div class="blog-stat-label">Evaluation Axes</div></div>
+            <div class="blog-stat"><div class="blog-stat-val">18</div><div class="blog-stat-label">Scenarios</div></div>
+          </div>
+
+          <hr class="blog-hr">
+          <h2>Why Viral Benchmarks Need to Be Different</h2>
+          <p>ViroBench is a unified benchmark for evaluating nucleotide foundation models on viral genomics tasks. Instead of testing models on a single simplified prediction problem, it organizes evaluation around two complementary axes: biological understanding and generation diagnostics. The first asks whether a model can recognize biologically meaningful viral signals; the second asks whether a model can produce or score viral sequences in a way that reflects sequence-level fidelity, coding constraints, and long-context behavior.</p>
+          <p>At its core, ViroBench contains 58,314 curated viral samples from NCBI, enriched with taxonomy, host annotations, nucleic-acid types, and data-source information. The benchmark covers four task families: Taxonomy Classification, Host Prediction, Genome Modeling, and CDS Completion. Together, these tasks provide a structured view of how nucleotide foundation models behave across viral sequence understanding and generation-oriented evaluation.</p>
+          <p>Many existing genomic benchmarks focus on regulatory elements, human genomics, or general DNA classification. These tasks are important, but they do not fully capture the distinctive challenges of viral genomics. Viral sequences introduce several forms of difficulty at once: DNA and RNA viruses follow different sequence distributions; closely related genera may be hard to separate; and new viral records can shift substantially over time.</p>
+          <p>ViroBench therefore avoids relying on a single random split. For classification, it includes genus-disjoint and temporal split settings, making it harder for models to benefit from near-duplicate or closely related sequences across train and test sets. This design better reflects practical use cases, where models may need to generalize to newly observed or evolutionarily distant viruses.</p>
+
+          <hr class="blog-hr">
+          <h2>What ViroBench Evaluates</h2>
+          <p>ViroBench evaluates models through four task groups.</p>
+          <div class="blog-task-list">
+            <div class="blog-task-item"><strong>Taxonomy Classification</strong>Measures whether models can identify viral taxonomic labels under controlled split settings.</div>
+            <div class="blog-task-item"><strong>Host Prediction</strong>Asks models to infer host categories from viral sequences and connect sequence modeling with ecological patterns.</div>
+            <div class="blog-task-item"><strong>Genome Modeling</strong>Evaluates how well models assign likelihood to viral genome sequences across different length regimes.</div>
+            <div class="blog-task-item"><strong>CDS Completion</strong>Tests whether generated continuations preserve sequence similarity and distributional fidelity with multi-metric diagnostics.</div>
+          </div>
+          <p>Rather than treating generation as a single score, ViroBench reports multiple diagnostic metrics, including edit distance, alignment identity, exact match accuracy, and k-mer distribution distances.</p>
+
+          <hr class="blog-hr">
+          <h2>A More Diagnostic Leaderboard</h2>
+          <p>The ViroBench leaderboard is designed to be more than a ranking table. It lets users compare models by task family, scenario, and metric, making it easier to identify where a model succeeds and where it fails.</p>
+          <p>A model may perform well on taxonomy classification but struggle with host prediction. Another may show strong short-sequence modeling but degrade sharply on longer viral genomes. Some models may produce sequences with plausible local statistics while failing to preserve coding-level constraints. These differences are difficult to see from a single averaged score, but they are central to understanding model behavior in viral genomics.</p>
+
+          <hr class="blog-hr">
+          <h2>Looking Forward</h2>
+          <p>ViroBench is intended as a living benchmark for the next generation of nucleotide foundation models. As models become longer-context, more generative, and more widely used in biological research, viral genomics offers a demanding testbed for both capability and reliability.</p>
+          <p>The goal is not only to ask which model ranks first. The more important question is: what kind of viral knowledge does each model actually learn, and where do its limits appear?</p>
+          <p>By providing standardized data, controlled task settings, and interpretable metrics, ViroBench aims to support more reproducible evaluation and more biologically grounded model development for viral genomics.</p>
+      </div>
+    </article>
+    </div>
+  </section>
+  <div class="footer"><div>© ViroBench · Benchmarking Nucleotide Foundation Models on Viral Genomics Tasks</div></div>
+</main>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.12.2/lottie.min.js" defer></script>
+<script src="assets/js/app.js?v=20260430e" defer></script>
+
+</body>
+</html>

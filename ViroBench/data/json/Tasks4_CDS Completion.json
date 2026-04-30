@@ -1,0 +1,672 @@
+{
+  "cds-long": [
+    {
+      "model": "Evo2-1b-base",
+      "edit_distance": 0.5247587951076935,
+      "exact_match_acc": 0.2604004388833447,
+      "is_CDS": 0.0002178886588953,
+      "kmer_JSD": 0.1114729264340729,
+      "kmer_KS": 0.1103201784830761
+    },
+    {
+      "model": "Evo2-7b-base",
+      "edit_distance": 0.5249426444672997,
+      "exact_match_acc": 0.2598530619334394,
+      "is_CDS": 0.0002178886588953,
+      "kmer_JSD": 0.1099888145436758,
+      "kmer_KS": 0.108530692932489
+    },
+    {
+      "model": "Evo2-7b",
+      "edit_distance": 0.523082774932806,
+      "exact_match_acc": 0.2602975429159587,
+      "is_CDS": 0.0002178886588953,
+      "kmer_JSD": 0.1080236600797135,
+      "kmer_KS": 0.1061865787021665
+    },
+    {
+      "model": "Evo2-40b-base",
+      "edit_distance": 0.5224975465850478,
+      "exact_match_acc": 0.2611808680513772,
+      "is_CDS": 0.0011983876239241,
+      "kmer_JSD": 0.107999024957488,
+      "kmer_KS": 0.1063778102924244
+    },
+    {
+      "model": "Evo2-40b",
+      "edit_distance": 0.5218257652633986,
+      "exact_match_acc": 0.2614568621763372,
+      "is_CDS": 0.0005447216472382,
+      "kmer_JSD": 0.1076157958702062,
+      "kmer_KS": 0.1062550436637188
+    },
+    {
+      "model": "Evo-1-8k-base",
+      "edit_distance": 0.5716939083896161,
+      "exact_match_acc": 0.2487106756399499,
+      "is_CDS": 0.0,
+      "kmer_JSD": 0.1786864475265306,
+      "kmer_KS": 0.2469350152033553
+    },
+    {
+      "model": "Evo-1-131k-base",
+      "edit_distance": 0.5576937596322238,
+      "exact_match_acc": 0.2514636701258163,
+      "is_CDS": 0.0004357773177906,
+      "kmer_JSD": 0.1674604748489936,
+      "kmer_KS": 0.2100585403165399
+    },
+    {
+      "model": "Evo-1.5-8k-base",
+      "edit_distance": 0.5234547090672562,
+      "exact_match_acc": 0.2615066561643459,
+      "is_CDS": 0.0001089443294476,
+      "kmer_JSD": 0.1049377422194158,
+      "kmer_KS": 0.1021396659641245
+    },
+    {
+      "model": "hyenadna-tiny-16k",
+      "edit_distance": 0.5329073672307164,
+      "exact_match_acc": 0.2569778691616317,
+      "is_CDS": 0.0,
+      "kmer_JSD": 0.1275613459585078,
+      "kmer_KS": 0.1214229813258192
+    },
+    {
+      "model": "hyenadna-tiny-1k",
+      "edit_distance": 0.5378867169338746,
+      "exact_match_acc": 0.254165956182249,
+      "is_CDS": 0.0,
+      "kmer_JSD": 0.222177069177479,
+      "kmer_KS": 0.1482319699114304
+    },
+    {
+      "model": "hyenadna-small-32k",
+      "edit_distance": 0.5341269654232372,
+      "exact_match_acc": 0.2551966301924876,
+      "is_CDS": 0.0,
+      "kmer_JSD": 0.1277746956710153,
+      "kmer_KS": 0.1246880227338321
+    },
+    {
+      "model": "hyenadna-medium-160k",
+      "edit_distance": 0.5314800537438045,
+      "exact_match_acc": 0.2560803484599275,
+      "is_CDS": 0.0,
+      "kmer_JSD": 0.1244365817620555,
+      "kmer_KS": 0.1189896144854881
+    },
+    {
+      "model": "hyenadna-medium-450k",
+      "edit_distance": 0.5318804901514586,
+      "exact_match_acc": 0.257005659096471,
+      "is_CDS": 0.0,
+      "kmer_JSD": 0.1256527541616857,
+      "kmer_KS": 0.1205242279529957
+    },
+    {
+      "model": "hyenadna-large-1m",
+      "edit_distance": 0.5316574466869342,
+      "exact_match_acc": 0.2572039068785733,
+      "is_CDS": 0.0,
+      "kmer_JSD": 0.1294925208559567,
+      "kmer_KS": 0.1227885092924927
+    },
+    {
+      "model": "Genos-1.2B",
+      "edit_distance": 0.5870569634301169,
+      "exact_match_acc": 0.2743338963791842,
+      "is_CDS": 0.0001089443294476,
+      "kmer_JSD": 0.4039519861186386,
+      "kmer_KS": 0.5080236776885592
+    },
+    {
+      "model": "Genos-10B",
+      "edit_distance": 0.5364200641875821,
+      "exact_match_acc": 0.2558301777919029,
+      "is_CDS": 0.0001089443294476,
+      "kmer_JSD": 0.134190127173535,
+      "kmer_KS": 0.1312818280431838
+    },
+    {
+      "model": "Genos-10B-v2",
+      "edit_distance": 0.5382022437485889,
+      "exact_match_acc": 0.2562317340408486,
+      "is_CDS": 0.0001089443294476,
+      "kmer_JSD": 0.1489702757987416,
+      "kmer_KS": 0.1507148434834644
+    },
+    {
+      "model": "OmniReg-GPT",
+      "edit_distance": 0.5335496865201126,
+      "exact_match_acc": 0.2538577880681628,
+      "is_CDS": 0.0,
+      "kmer_JSD": 0.1150919025464341,
+      "kmer_KS": 0.1092583827057284
+    },
+    {
+      "model": "GenomeOcean-100M",
+      "edit_distance": 0.5858295809534877,
+      "exact_match_acc": 0.2383131579134202,
+      "is_CDS": 0.0003268329883429,
+      "kmer_JSD": 0.6684874229860129,
+      "kmer_KS": 0.7073785767740597
+    },
+    {
+      "model": "GenomeOcean-500M",
+      "edit_distance": 0.58728784038275,
+      "exact_match_acc": 0.2363869244200787,
+      "is_CDS": 0.0001089443294476,
+      "kmer_JSD": 0.6304453242823367,
+      "kmer_KS": 0.6696805890346723
+    },
+    {
+      "model": "GenomeOcean-4B",
+      "edit_distance": 0.5652368394404397,
+      "exact_match_acc": 0.2584225615191519,
+      "is_CDS": 0.0002178886588953,
+      "kmer_JSD": 0.5963914624072193,
+      "kmer_KS": 0.6348016919067525
+    },
+    {
+      "model": "GENERator-v2-eukaryote-1.2b-base",
+      "edit_distance": 0.5667377487450613,
+      "exact_match_acc": 0.2783953080462196,
+      "is_CDS": 0.0001089443294476,
+      "kmer_JSD": 0.5656709260168941,
+      "kmer_KS": 0.6465176463481008
+    },
+    {
+      "model": "GENERator-v2-eukaryote-3b-base",
+      "edit_distance": 0.5680089364126751,
+      "exact_match_acc": 0.2718687488372459,
+      "is_CDS": 0.0004357773177906,
+      "kmer_JSD": 0.5357393699863373,
+      "kmer_KS": 0.6127255246308809
+    },
+    {
+      "model": "GENERator-v2-prokaryote-1.2b-base",
+      "edit_distance": 0.5393645832145861,
+      "exact_match_acc": 0.2643619124125605,
+      "is_CDS": 0.0005447216472382,
+      "kmer_JSD": 0.2559283857369336,
+      "kmer_KS": 0.3074399457765314
+    },
+    {
+      "model": "GENERator-v2-prokaryote-3b-base",
+      "edit_distance": 0.5243689000683592,
+      "exact_match_acc": 0.2551706477434432,
+      "is_CDS": 0.0003268329883429,
+      "kmer_JSD": 0.1191423810531195,
+      "kmer_KS": 0.121846433472599
+    }
+  ],
+  "cds-short": [
+    {
+      "model": "Evo2-1b-base",
+      "edit_distance": 0.5507887929931944,
+      "exact_match_acc": 0.2691813780510143,
+      "is_CDS": 0.0075524475524475,
+      "kmer_JSD": 0.1571938194853323,
+      "kmer_KS": 0.1357707167188374
+    },
+    {
+      "model": "Evo2-7b-base",
+      "edit_distance": 0.5499150648096875,
+      "exact_match_acc": 0.2712144664533856,
+      "is_CDS": 0.0097902097902097,
+      "kmer_JSD": 0.1547028507536199,
+      "kmer_KS": 0.1339989369842406
+    },
+    {
+      "model": "Evo2-7b",
+      "edit_distance": 0.5508662630920853,
+      "exact_match_acc": 0.2690039298054839,
+      "is_CDS": 0.0083916083916083,
+      "kmer_JSD": 0.1554652824160655,
+      "kmer_KS": 0.1338279229731188
+    },
+    {
+      "model": "Evo2-40b-base",
+      "edit_distance": 0.5478163725078081,
+      "exact_match_acc": 0.272306149620461,
+      "is_CDS": 0.0148251748251748,
+      "kmer_JSD": 0.154016994601894,
+      "kmer_KS": 0.1313180129835334
+    },
+    {
+      "model": "Evo2-40b",
+      "edit_distance": 0.5468564280217963,
+      "exact_match_acc": 0.2730249444233884,
+      "is_CDS": 0.0142657342657342,
+      "kmer_JSD": 0.1524685867847578,
+      "kmer_KS": 0.13102260306978
+    },
+    {
+      "model": "Evo-1-8k-base",
+      "edit_distance": 0.5950456379674947,
+      "exact_match_acc": 0.256194264757191,
+      "is_CDS": 0.0069930069930069,
+      "kmer_JSD": 0.2072933494771384,
+      "kmer_KS": 0.2250506033549549
+    },
+    {
+      "model": "Evo-1-131k-base",
+      "edit_distance": 0.5784299779633642,
+      "exact_match_acc": 0.2628762810446047,
+      "is_CDS": 0.0072727272727272,
+      "kmer_JSD": 0.2154782721951546,
+      "kmer_KS": 0.2280131429422309
+    },
+    {
+      "model": "Evo-1.5-8k-base",
+      "edit_distance": 0.5521283623346107,
+      "exact_match_acc": 0.2682078412391556,
+      "is_CDS": 0.0053146853146853,
+      "kmer_JSD": 0.1562863663562127,
+      "kmer_KS": 0.1330987762237762
+    },
+    {
+      "model": "hyenadna-tiny-16k",
+      "edit_distance": 0.5593670975573588,
+      "exact_match_acc": 0.2598836604016409,
+      "is_CDS": 0.0097902097902097,
+      "kmer_JSD": 0.1675661079652122,
+      "kmer_KS": 0.1476332043937805
+    },
+    {
+      "model": "hyenadna-tiny-1k",
+      "edit_distance": 0.5597676245342615,
+      "exact_match_acc": 0.2608005580071443,
+      "is_CDS": 0.0089510489510489,
+      "kmer_JSD": 0.1668677582936221,
+      "kmer_KS": 0.1454772537720921
+    },
+    {
+      "model": "hyenadna-small-32k",
+      "edit_distance": 0.5604906433228953,
+      "exact_match_acc": 0.2604943629879833,
+      "is_CDS": 0.0097902097902097,
+      "kmer_JSD": 0.1661608094417205,
+      "kmer_KS": 0.1460262888118697
+    },
+    {
+      "model": "hyenadna-medium-160k",
+      "edit_distance": 0.5582247515260799,
+      "exact_match_acc": 0.2590122399585144,
+      "is_CDS": 0.0097902097902097,
+      "kmer_JSD": 0.1661140436824996,
+      "kmer_KS": 0.1446475884301544
+    },
+    {
+      "model": "hyenadna-medium-450k",
+      "edit_distance": 0.5582448269792798,
+      "exact_match_acc": 0.2612723679207237,
+      "is_CDS": 0.0069930069930069,
+      "kmer_JSD": 0.169361633595709,
+      "kmer_KS": 0.1483253151339951
+    },
+    {
+      "model": "hyenadna-large-1m",
+      "edit_distance": 0.5578160339948895,
+      "exact_match_acc": 0.2614033037500369,
+      "is_CDS": 0.0083916083916083,
+      "kmer_JSD": 0.1649134852734243,
+      "kmer_KS": 0.142453706367208
+    },
+    {
+      "model": "Genos-1.2B",
+      "edit_distance": 0.5643982253682386,
+      "exact_match_acc": 0.2665336486235647,
+      "is_CDS": 0.0103496503496503,
+      "kmer_JSD": 0.2116932458949911,
+      "kmer_KS": 0.2090467232043116
+    },
+    {
+      "model": "Genos-10B",
+      "edit_distance": 0.5607012956392223,
+      "exact_match_acc": 0.2606136910936206,
+      "is_CDS": 0.0064335664335664,
+      "kmer_JSD": 0.1718817706741467,
+      "kmer_KS": 0.1509511947805427
+    },
+    {
+      "model": "Genos-10B-v2",
+      "edit_distance": 0.5611922118143753,
+      "exact_match_acc": 0.2617017748206764,
+      "is_CDS": 0.0075524475524475,
+      "kmer_JSD": 0.1753389202066831,
+      "kmer_KS": 0.1558493027889602
+    },
+    {
+      "model": "OmniReg-GPT",
+      "edit_distance": 0.5684595257201688,
+      "exact_match_acc": 0.2542505619249217,
+      "is_CDS": 0.0081118881118881,
+      "kmer_JSD": 0.1603649081155924,
+      "kmer_KS": 0.1372377622377622
+    },
+    {
+      "model": "GenomeOcean-100M",
+      "edit_distance": 0.5953257260882932,
+      "exact_match_acc": 0.2359138202898862,
+      "is_CDS": 0.0027972027972027,
+      "kmer_JSD": 0.4040817937455142,
+      "kmer_KS": 0.39319493006993
+    },
+    {
+      "model": "GenomeOcean-500M",
+      "edit_distance": 0.5973904980454237,
+      "exact_match_acc": 0.235503759105442,
+      "is_CDS": 0.0033566433566433,
+      "kmer_JSD": 0.4033704956519355,
+      "kmer_KS": 0.3882386363636363
+    },
+    {
+      "model": "GenomeOcean-4B",
+      "edit_distance": 0.5718203290793893,
+      "exact_match_acc": 0.2593890774524878,
+      "is_CDS": 0.003076923076923,
+      "kmer_JSD": 0.3327711927917746,
+      "kmer_KS": 0.3191127622377622
+    },
+    {
+      "model": "GENERator-v2-eukaryote-1.2b-base",
+      "edit_distance": 0.5496724031630582,
+      "exact_match_acc": 0.2692494914246596,
+      "is_CDS": 0.0052550231839258,
+      "kmer_JSD": 0.1691825690212577,
+      "kmer_KS": 0.1460125627863694
+    },
+    {
+      "model": "GENERator-v2-eukaryote-3b-base",
+      "edit_distance": 0.5499696626270985,
+      "exact_match_acc": 0.2682942288958557,
+      "is_CDS": 0.0033566433566433,
+      "kmer_JSD": 0.1605835915957305,
+      "kmer_KS": 0.1421409868055974
+    },
+    {
+      "model": "GENERator-v2-prokaryote-1.2b-base",
+      "edit_distance": 0.5493523962699405,
+      "exact_match_acc": 0.2670699138973904,
+      "is_CDS": 0.0081118881118881,
+      "kmer_JSD": 0.1535055511435533,
+      "kmer_KS": 0.1300406769658866
+    },
+    {
+      "model": "GENERator-v2-prokaryote-3b-base",
+      "edit_distance": 0.5480887354003083,
+      "exact_match_acc": 0.2659251993071972,
+      "is_CDS": 0.0089510489510489,
+      "kmer_JSD": 0.1507958152696108,
+      "kmer_KS": 0.1261069017835183
+    },
+    {
+      "model": "ViroHyena-436k",
+      "edit_distance": 0.5590079799584979,
+      "exact_match_acc": 0.2592558148891913,
+      "is_CDS": 0.0089510489510489,
+      "kmer_JSD": 0.1673491981662163,
+      "kmer_KS": 0.1496295385916902
+    },
+    {
+      "model": "ViroHyena-1m",
+      "edit_distance": 0.5563573615808055,
+      "exact_match_acc": 0.2582964078055438,
+      "is_CDS": 0.0081118881118881,
+      "kmer_JSD": 0.1588141292438566,
+      "kmer_KS": 0.136886859857095
+    },
+    {
+      "model": "ViroHyena-6m",
+      "edit_distance": 0.555554714079171,
+      "exact_match_acc": 0.2604631185573561,
+      "is_CDS": 0.0106293706293706,
+      "kmer_JSD": 0.1588206344217838,
+      "kmer_KS": 0.1387726975709627
+    },
+    {
+      "model": "ViroHyena-253m",
+      "edit_distance": 0.5570866460481909,
+      "exact_match_acc": 0.2615264433833485,
+      "is_CDS": 0.01006993006993,
+      "kmer_JSD": 0.1596242670332923,
+      "kmer_KS": 0.1394365925604479
+    }
+  ],
+  "cds-medium": [
+    {
+      "model": "Evo2-1b-base",
+      "edit_distance": 0.5325597578655692,
+      "exact_match_acc": 0.2637977146940849,
+      "is_CDS": 0.0012738853503184,
+      "kmer_JSD": 0.128487664428907,
+      "kmer_KS": 0.1180969838919051
+    },
+    {
+      "model": "Evo2-7b-base",
+      "edit_distance": 0.5317635703016177,
+      "exact_match_acc": 0.2641785187824404,
+      "is_CDS": 0.0030937215650591,
+      "kmer_JSD": 0.1271686619848497,
+      "kmer_KS": 0.1164801100083144
+    },
+    {
+      "model": "Evo2-7b",
+      "edit_distance": 0.5311116440587413,
+      "exact_match_acc": 0.264141858689617,
+      "is_CDS": 0.0032757051865332,
+      "kmer_JSD": 0.1262631611542465,
+      "kmer_KS": 0.1155222095812543
+    },
+    {
+      "model": "Evo2-40b-base",
+      "edit_distance": 0.5295936031203391,
+      "exact_match_acc": 0.267310473214451,
+      "is_CDS": 0.002911737943585,
+      "kmer_JSD": 0.1255887823139758,
+      "kmer_KS": 0.1157850771822149
+    },
+    {
+      "model": "Evo2-40b",
+      "edit_distance": 0.5292870710600233,
+      "exact_match_acc": 0.2669047600617923,
+      "is_CDS": 0.0060054595086442,
+      "kmer_JSD": 0.1242739126172339,
+      "kmer_KS": 0.115131951362218
+    },
+    {
+      "model": "Evo-1-8k-base",
+      "edit_distance": 0.5844351089599922,
+      "exact_match_acc": 0.2519132889211306,
+      "is_CDS": 0.0018198362147406,
+      "kmer_JSD": 0.1999685421368964,
+      "kmer_KS": 0.2446313036758596
+    },
+    {
+      "model": "Evo-1-131k-base",
+      "edit_distance": 0.559308384646508,
+      "exact_match_acc": 0.2588396345822755,
+      "is_CDS": 0.0038216560509554,
+      "kmer_JSD": 0.198626597246756,
+      "kmer_KS": 0.2265757679785725
+    },
+    {
+      "model": "Evo-1.5-8k-base",
+      "edit_distance": 0.5325630073365983,
+      "exact_match_acc": 0.2642301926932418,
+      "is_CDS": 0.0025477707006369,
+      "kmer_JSD": 0.1247025813716055,
+      "kmer_KS": 0.1139416515013648
+    },
+    {
+      "model": "hyenadna-tiny-16k",
+      "edit_distance": 0.5414313437654711,
+      "exact_match_acc": 0.2579799188669657,
+      "is_CDS": 0.000181983621474,
+      "kmer_JSD": 0.1412184901992375,
+      "kmer_KS": 0.1265651869291172
+    },
+    {
+      "model": "hyenadna-tiny-1k",
+      "edit_distance": 0.5424128929219609,
+      "exact_match_acc": 0.2566506306339231,
+      "is_CDS": 0.000181983621474,
+      "kmer_JSD": 0.1433772754399306,
+      "kmer_KS": 0.1312169552209818
+    },
+    {
+      "model": "hyenadna-small-32k",
+      "edit_distance": 0.5424949483015565,
+      "exact_match_acc": 0.2568270054958937,
+      "is_CDS": 0.0005459508644222,
+      "kmer_JSD": 0.1466907847414383,
+      "kmer_KS": 0.1349172199348872
+    },
+    {
+      "model": "hyenadna-medium-160k",
+      "edit_distance": 0.5408265703202758,
+      "exact_match_acc": 0.2571504066914823,
+      "is_CDS": 0.000181983621474,
+      "kmer_JSD": 0.1394953071244739,
+      "kmer_KS": 0.1237358957581443
+    },
+    {
+      "model": "hyenadna-medium-450k",
+      "edit_distance": 0.5407682256759544,
+      "exact_match_acc": 0.2580579774034616,
+      "is_CDS": 0.0,
+      "kmer_JSD": 0.1435850365116965,
+      "kmer_KS": 0.1304551545764349
+    },
+    {
+      "model": "hyenadna-large-1m",
+      "edit_distance": 0.5402737843825202,
+      "exact_match_acc": 0.2583101855756503,
+      "is_CDS": 0.000181983621474,
+      "kmer_JSD": 0.1404323586707175,
+      "kmer_KS": 0.1244507620712599
+    },
+    {
+      "model": "Genos-1.2B",
+      "edit_distance": 0.5666491531415604,
+      "exact_match_acc": 0.2722224927625442,
+      "is_CDS": 0.0007279344858962,
+      "kmer_JSD": 0.2933031070093901,
+      "kmer_KS": 0.3314446051935088
+    },
+    {
+      "model": "Genos-10B",
+      "edit_distance": 0.5429999717092917,
+      "exact_match_acc": 0.2574050128217807,
+      "is_CDS": 0.0005459508644222,
+      "kmer_JSD": 0.1469723389871335,
+      "kmer_KS": 0.1324273819721882
+    },
+    {
+      "model": "Genos-10B-v2",
+      "edit_distance": 0.5443004754315122,
+      "exact_match_acc": 0.2584234224719216,
+      "is_CDS": 0.0009099181073703,
+      "kmer_JSD": 0.1568658473720928,
+      "kmer_KS": 0.1453050635261517
+    },
+    {
+      "model": "OmniReg-GPT",
+      "edit_distance": 0.54510791158181,
+      "exact_match_acc": 0.2541334154686258,
+      "is_CDS": 0.0005459508644222,
+      "kmer_JSD": 0.1288888569313938,
+      "kmer_KS": 0.1149493393836095
+    },
+    {
+      "model": "GenomeOcean-100M",
+      "edit_distance": 0.5803999608346226,
+      "exact_match_acc": 0.2389771076541907,
+      "is_CDS": 0.0005459508644222,
+      "kmer_JSD": 0.5501905642251139,
+      "kmer_KS": 0.5421642265056377
+    },
+    {
+      "model": "GenomeOcean-500M",
+      "edit_distance": 0.5810480796492492,
+      "exact_match_acc": 0.2389930038718464,
+      "is_CDS": 0.0005459508644222,
+      "kmer_JSD": 0.526093371026289,
+      "kmer_KS": 0.519318004659948
+    },
+    {
+      "model": "GenomeOcean-4B",
+      "edit_distance": 0.5599687585275863,
+      "exact_match_acc": 0.2581498600025051,
+      "is_CDS": 0.0007279344858962,
+      "kmer_JSD": 0.4445515385208404,
+      "kmer_KS": 0.4370763193812557
+    },
+    {
+      "model": "GENERator-v2-eukaryote-1.2b-base",
+      "edit_distance": 0.5466481629885789,
+      "exact_match_acc": 0.279179841598723,
+      "is_CDS": 0.0003639672429481,
+      "kmer_JSD": 0.2956888663581353,
+      "kmer_KS": 0.3365019061446264
+    },
+    {
+      "model": "GENERator-v2-eukaryote-3b-base",
+      "edit_distance": 0.5457392600538209,
+      "exact_match_acc": 0.2778578391306471,
+      "is_CDS": 0.0012738853503184,
+      "kmer_JSD": 0.279096959609026,
+      "kmer_KS": 0.3124584215217693
+    },
+    {
+      "model": "GENERator-v2-prokaryote-1.2b-base",
+      "edit_distance": 0.5345293359118664,
+      "exact_match_acc": 0.2681862249208128,
+      "is_CDS": 0.0012738853503184,
+      "kmer_JSD": 0.1594120462262618,
+      "kmer_KS": 0.1551182801885832
+    },
+    {
+      "model": "GENERator-v2-prokaryote-3b-base",
+      "edit_distance": 0.529129052060893,
+      "exact_match_acc": 0.2617717969627702,
+      "is_CDS": 0.000181983621474,
+      "kmer_JSD": 0.1237017817955823,
+      "kmer_KS": 0.1182809606209865
+    },
+    {
+      "model": "ViroHyena-436k",
+      "edit_distance": 0.542479496896983,
+      "exact_match_acc": 0.256609231985987,
+      "is_CDS": 0.0003639672429481,
+      "kmer_JSD": 0.1461493656538097,
+      "kmer_KS": 0.1426643511466988
+    },
+    {
+      "model": "ViroHyena-1m",
+      "edit_distance": 0.538004815023278,
+      "exact_match_acc": 0.2565968370104082,
+      "is_CDS": 0.0003639672429481,
+      "kmer_JSD": 0.1326421122938072,
+      "kmer_KS": 0.1235902934192244
+    },
+    {
+      "model": "ViroHyena-6m",
+      "edit_distance": 0.5370024916169273,
+      "exact_match_acc": 0.2578136441258665,
+      "is_CDS": 0.0003639672429481,
+      "kmer_JSD": 0.131593040925717,
+      "kmer_KS": 0.1201885317474304
+    },
+    {
+      "model": "ViroHyena-253m",
+      "edit_distance": 0.5384668830871806,
+      "exact_match_acc": 0.2599699204766316,
+      "is_CDS": 0.0009099181073703,
+      "kmer_JSD": 0.1369278449351696,
+      "kmer_KS": 0.1253379593309926
+    }
+  ]
+}
