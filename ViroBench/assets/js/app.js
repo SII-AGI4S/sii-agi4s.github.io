@@ -193,7 +193,7 @@ function renderTaskCards() {
       l: "Length buckets",
       c1: "#e76f51",
       c2: "#f59e0b",
-      best: bestRowsFor("cds", "cds-short", "kmer_JSD", 1)[0]?.model || "—",
+      best: bestRowsFor("cds", "cds-short", "is_CDS", 1)[0]?.model || "—",
     },
   ];
   const block = document.createElement("div");
