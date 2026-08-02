@@ -36,3 +36,7 @@ Thumbs.db
 
 # ViroBench
 ViroBench/start.sh
+
+# Published static data for the Awesome-DNA site
+!Awesome-DNA/data/
+!Awesome-DNA/data/**
