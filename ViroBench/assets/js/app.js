@@ -36,6 +36,7 @@ const metricLabel = {
 const lowerBetter = new Set(["mean", "median", "min", "max", "edit_distance", "kmer_JSD", "kmer_KS"]);
 
 let state = { task: "taxonomy", scenario: "ALL-taxon-genus", metric: "avg_taxon", search: "" };
+let overallState = { category: "classification", sortKey: "average", sortDir: -1 };
 let selectedModel = null;
 let genBucket = "genome-short";
 let cdsBucket = "cds-short";
@@ -50,6 +51,31 @@ const scatterState = {
 
 const $ = (s) => document.querySelector(s);
 const $$ = (s) => Array.from(document.querySelectorAll(s));
+
+const OVERALL_CONFIG = {
+  classification: [
+    { group: "ALL", task: "taxonomy", split: "genus", scenario: "ALL-taxon-genus", metric: "avg_taxon", label: "G-Split" },
+    { group: "ALL", task: "taxonomy", split: "times", scenario: "ALL-taxon-times", metric: "avg_taxon", label: "T-Split" },
+    { group: "ALL", task: "host", split: "genus", scenario: "ALL-host-genus", metric: "f1_macro", label: "G-Split" },
+    { group: "ALL", task: "host", split: "times", scenario: "ALL-host-times", metric: "f1_macro", label: "T-Split" },
+    { group: "DNA", task: "taxonomy", split: "genus", scenario: "DNA-taxon-genus", metric: "avg_taxon", label: "G-Split" },
+    { group: "DNA", task: "taxonomy", split: "times", scenario: "DNA-taxon-times", metric: "avg_taxon", label: "T-Split" },
+    { group: "DNA", task: "host", split: "genus", scenario: "DNA-host-genus", metric: "f1_macro", label: "G-Split" },
+    { group: "DNA", task: "host", split: "times", scenario: "DNA-host-times", metric: "f1_macro", label: "T-Split" },
+    { group: "RNA", task: "taxonomy", split: "genus", scenario: "RNA-taxon-genus", metric: "avg_taxon", label: "G-Split" },
+    { group: "RNA", task: "taxonomy", split: "times", scenario: "RNA-taxon-times", metric: "avg_taxon", label: "T-Split" },
+    { group: "RNA", task: "host", split: "genus", scenario: "RNA-host-genus", metric: "f1_macro", label: "G-Split" },
+    { group: "RNA", task: "host", split: "times", scenario: "RNA-host-times", metric: "f1_macro", label: "T-Split" },
+  ],
+  generation: [
+    { group: "BPB", task: "genome", scenarios: ["genome-short", "genome-medium", "genome-long"], metric: "mean", label: "Mean BPB", lower: true, raw: true },
+    { group: "CDS Generation", task: "cds", scenarios: ["cds-short", "cds-medium", "cds-long"], metric: "kmer_JSD", label: "K-mer JSD", lower: true, raw: true },
+    { group: "CDS Generation", task: "cds", scenarios: ["cds-short", "cds-medium", "cds-long"], metric: "kmer_KS", label: "K-mer KS", lower: true, raw: true },
+    { group: "CDS Generation", task: "cds", scenarios: ["cds-short", "cds-medium", "cds-long"], metric: "edit_distance", label: "Edit distance", lower: true, raw: true },
+    { group: "CDS Generation", task: "cds", scenarios: ["cds-short", "cds-medium", "cds-long"], metric: "exact_match_acc", label: "Exact match", raw: true },
+    { group: "CDS Generation", task: "cds", scenarios: ["cds-short", "cds-medium", "cds-long"], metric: "is_CDS", label: "CDS success", raw: true },
+  ],
+};
 
 function parseVal(v) {
   if (v === null || v === undefined) return NaN;
@@ -206,6 +232,187 @@ function renderTaskCards() {
     .join("");
   const ref = $(".section-title");
   ref.parentNode.insertBefore(block, ref);
+}
+
+function overallColumns() {
+  return OVERALL_CONFIG[overallState.category];
+}
+
+function overallMetricValue(row, col) {
+  return col.metric === "avg_taxon" ? avgTaxon(row) : parseVal(row[col.metric]);
+}
+
+function buildOverallRows() {
+  const cols = overallColumns();
+  const byModel = new Map();
+  cols.forEach((col, index) => {
+    const scenarios = col.scenarios || [col.scenario];
+    const entries = new Map();
+    scenarios.forEach((scenario) => {
+      (RAW[col.task]?.[scenario] || []).forEach((row) => {
+        const raw = overallMetricValue(row, col);
+        if (!Number.isFinite(raw)) return;
+        const key = normalizeModelKey(row.model);
+        if (!entries.has(key)) entries.set(key, { model: row.model, raw: [] });
+        entries.get(key).raw.push(raw);
+      });
+    });
+    const allRaw = Array.from(entries.values()).flatMap((entry) => entry.raw);
+    const min = Math.min(...allRaw), max = Math.max(...allRaw);
+    entries.forEach((entry, key) => {
+      const raw = entry.raw.reduce((a, b) => a + b, 0) / entry.raw.length;
+      let score;
+      if (col.task === "taxonomy" || col.task === "host") score = raw;
+      else if (col.metric === "is_CDS" || col.metric === "exact_match_acc") score = raw * 100;
+      else score = col.lower ? ((max - raw) / (max - min || 1)) * 100 : ((raw - min) / (max - min || 1)) * 100;
+      if (!byModel.has(key)) byModel.set(key, { model: entry.model, scores: [], values: [] });
+      byModel.get(key).scores[index] = score;
+      byModel.get(key).values[index] = raw;
+    });
+  });
+  return Array.from(byModel.values()).map((entry) => {
+    const available = entry.scores.filter(Number.isFinite);
+    entry.average = available.length ? available.reduce((a, b) => a + b, 0) / available.length : NaN;
+    return entry;
+  }).filter((entry) => Number.isFinite(entry.average));
+}
+
+function overallHeaderHtml(cols) {
+  const groups = [];
+  cols.forEach((col, i) => {
+    const last = groups[groups.length - 1];
+    if (last && last.name === col.group) last.indices.push(i);
+    else groups.push({ name: col.group, indices: [i] });
+  });
+  const headerRows = overallState.category === "generation" ? 2 : 3;
+  const averageFormula = overallState.category === "classification"
+    ? "Average = (ALL-Taxonomy-G + ALL-Taxonomy-T + ALL-Host-G + ALL-Host-T + DNA-Taxonomy-G + DNA-Taxonomy-T + DNA-Host-G + DNA-Host-T + RNA-Taxonomy-G + RNA-Taxonomy-T + RNA-Host-G + RNA-Host-T) / N, N = number of available scores"
+    : "BPB = (BPBshort + BPBmedium + BPBlong) / 3; CDSmetric = (CDSshort + CDSmedium + CDSlong) / 3; lower-better score = 100 × (max − x) / (max − min); higher-better score = 100 × x; Average = (BPBscore + JSDscore + KSscore + Editscore + ExactMatchscore + CDSSuccessscore) / N";
+  const formulaIcon = `<svg viewBox="0 0 1024 1024" aria-hidden="true"><path d="M512 952.32a440.32 440.32 0 1 0 0-880.64 440.32 440.32 0 0 0 0 880.64z m0 71.68C229.2224 1024 0 794.7776 0 512S229.2224 0 512 0s512 229.2224 512 512-229.2224 512-512 512z m5.6832-338.4832a56.8832 56.8832 0 1 0 0 113.7664 56.8832 56.8832 0 0 0 0-113.7664z m0-455.1168C486.2464 230.4 460.8 255.8464 460.8 287.2832v284.4672a56.8832 56.8832 0 0 0 113.7664 0V287.232c0-31.4368-25.4464-56.8832-56.832-56.8832z" fill="currentColor"></path></svg>`;
+  const groupRow = `<tr><th rowspan="${headerRows}">#</th><th rowspan="${headerRows}">Model</th>${groups.map((g) => `<th colspan="${g.indices.length}">${g.name}</th>`).join("")}<th rowspan="${headerRows}" class="average-head sort-head" data-sort="average"><span class="average-heading"><button type="button" class="formula-note" aria-label="Show Average formula" aria-expanded="false">${formulaIcon}</button><span>Average <span class="sort-indicator">${overallState.sortKey === "average" ? (overallState.sortDir < 0 ? "↓" : "↑") : "↕"}</span></span></span><span class="formula-popover" role="tooltip">${averageFormula}</span></th></tr>`;
+  if (overallState.category === "generation") {
+    const valueRow = cols.map((col, i) => `<th class="sort-head" data-sort="${i}">${col.label}<span class="sort-indicator">${overallState.sortKey === i ? (overallState.sortDir < 0 ? "↓" : "↑") : "↕"}</span></th>`).join("");
+    return groupRow + `<tr>${valueRow}</tr>`;
+  }
+  const taskRow = groups.map((g) => {
+    if (overallState.category === "classification") {
+      const names = g.name === "ALL" || g.name === "DNA" || g.name === "RNA" ? ["Taxonomy", "Host"] : [g.name];
+      return names.map((name) => `<th colspan="2">${name}</th>`).join("");
+    }
+    return `<th colspan="${g.indices.length}">${g.name}</th>`;
+  }).join("");
+  const splitRow = cols.map((col, i) => `<th class="sort-head" data-sort="${i}">${col.label}<span class="sort-indicator">${overallState.sortKey === i ? (overallState.sortDir < 0 ? "↓" : "↑") : "↕"}</span></th>`).join("");
+  return groupRow + `<tr>${taskRow}</tr><tr>${splitRow}</tr>`;
+}
+
+function renderOverallLeaderboard() {
+  const cols = overallColumns();
+  const rows = buildOverallRows();
+  rows.sort((a, b) => {
+    const av = overallState.sortKey === "average" ? a.average : a.scores[overallState.sortKey];
+    const bv = overallState.sortKey === "average" ? b.average : b.scores[overallState.sortKey];
+    if (!Number.isFinite(av)) return 1;
+    if (!Number.isFinite(bv)) return -1;
+    return (av - bv) * overallState.sortDir;
+  });
+  $("#overallHead").innerHTML = overallHeaderHtml(cols);
+  $("#overallBody").innerHTML = rows.map((row, i) => {
+    const [fam, color] = familyOf(row.model);
+    const cells = cols.map((col, j) => `<td class="overall-score">${Number.isFinite(row.values[j]) ? fmt(row.values[j], col.metric) : "—"}</td>`).join("");
+    return `<tr data-model="${row.model.replaceAll('"', "&quot;")}"><td class="rank ${i === 0 ? "r1" : i === 1 ? "r2" : i === 2 ? "r3" : ""}">${i + 1}</td><td><div class="model-cell" style="--family-color:${color}"><span class="model-dot"></span><div><div class="model-name">${row.model}</div><div class="family">${fam}</div></div></div></td>${cells}<td class="overall-average">${row.average.toFixed(2)}</td></tr>`;
+  }).join("");
+  $$("#overallHead .sort-head").forEach((head) => head.onclick = () => {
+    const key = head.dataset.sort === "average" ? "average" : Number(head.dataset.sort);
+    if (overallState.sortKey === key) overallState.sortDir *= -1;
+    else { overallState.sortKey = key; overallState.sortDir = -1; }
+    renderOverallLeaderboard();
+  });
+  $$("#overallBody tr").forEach((tr) => tr.onclick = () => {
+    const model = tr.dataset.model;
+    let targetTask = overallState.category === "classification" ? "taxonomy" : "genome";
+    if (targetTask === "genome" && !(RAW.genome["genome-short"] || []).some((row) => normalizeModelKey(row.model) === normalizeModelKey(model))) targetTask = "cds";
+    state.task = targetTask;
+    state.scenario = targetTask === "taxonomy" ? "ALL-taxon-genus" : targetTask === "genome" ? "genome-short" : "cds-short";
+    state.metric = targetTask === "taxonomy" ? "avg_taxon" : targetTask === "genome" ? "mean" : "is_CDS";
+    state.search = "";
+    selectedModel = model;
+    const leaderboard = $("#leaderboard");
+    if (leaderboard) leaderboard.scrollIntoView({ behavior: "smooth", block: "start" });
+    renderPills();
+    renderControls();
+    renderLeaderboard();
+    drawBarChart();
+  });
+}
+
+function initFormulaDelegation() {
+  if (document.body.dataset.formulaDelegated === "1") return;
+  document.body.dataset.formulaDelegated = "1";
+  const overlay = document.createElement("div");
+  overlay.className = "formula-popover formula-overlay";
+  overlay.setAttribute("role", "tooltip");
+  document.body.appendChild(overlay);
+  document.addEventListener("click", (event) => {
+    const note = event.target.closest?.("#overallHead .formula-note");
+    if (!note) {
+      overlay.style.display = "none";
+      $$("#overallHead .formula-note").forEach((button) => button.setAttribute("aria-expanded", "false"));
+      return;
+    }
+    event.preventDefault();
+    event.stopPropagation();
+    const open = note.getAttribute("aria-expanded") === "true";
+    $$("#overallHead .formula-note").forEach((other) => {
+      other.setAttribute("aria-expanded", "false");
+      const otherPopover = other.closest("th")?.querySelector(".formula-popover");
+      if (otherPopover) {
+        otherPopover.classList.remove("on");
+        otherPopover.style.display = "none";
+      }
+    });
+    overlay.style.display = "none";
+    if (!open) {
+      note.setAttribute("aria-expanded", "true");
+      const rect = note.getBoundingClientRect();
+      const formula = note.closest("th")?.querySelector(".formula-popover")?.textContent || "";
+      overlay.textContent = formula;
+      overlay.style.left = `${Math.max(8, Math.min(rect.left, window.innerWidth - 328))}px`;
+      overlay.style.top = `${rect.bottom + 8}px`;
+      overlay.style.display = "block";
+    }
+  }, true);
+}
+
+function renderOverallPills() {
+  $("#overallPills").innerHTML = `<button class="pill ${overallState.category === "classification" ? "on" : ""}" data-overall="classification">Classification</button><button class="pill ${overallState.category === "generation" ? "on" : ""}" data-overall="generation">Generation</button>`;
+  $$("#overallPills .pill").forEach((button) => button.onclick = () => {
+    overallState.category = button.dataset.overall;
+    overallState.sortKey = "average";
+    overallState.sortDir = -1;
+    renderOverallPills();
+    renderOverallLeaderboard();
+  });
+}
+
+async function initVisitCounter() {
+  const target = $("#visitCount");
+  if (!target) return;
+  const endpoint = "https://page-views-api.ratneshc.com/api/v1";
+  const site = "virobench-web";
+  const path = "/";
+  try {
+    const query = `?site=${encodeURIComponent(site)}&path=${encodeURIComponent(path)}`;
+    const tracked = await fetch(`${endpoint}/track${query}`, { cache: "no-store", keepalive: true });
+    if (!tracked.ok) throw new Error(`track ${tracked.status}`);
+    const response = await fetch(`${endpoint}/views${query}`, { cache: "no-store" });
+    if (!response.ok) throw new Error(`views ${response.status}`);
+    const payload = await response.json();
+    if (!Number.isFinite(Number(payload?.views))) throw new Error("invalid counter response");
+    target.textContent = `Visits · ${Number(payload.views).toLocaleString()}`;
+  } catch (error) {
+    target.textContent = "Visits · —";
+    console.warn("Shared visit counter unavailable", error);
+  }
 }
 
 function renderPills() {
@@ -895,8 +1102,11 @@ async function bootstrap() {
     await ensureLottieLoaded();
     initHeroDnaAnimation();
     await loadData();
+    initFormulaDelegation();
     initStats();
     renderTaskCards();
+    renderOverallPills();
+    renderOverallLeaderboard();
     initNav();
     initTaskBrowser();
     initGenerationPills();
@@ -904,6 +1114,7 @@ async function bootstrap() {
     initScatterHover();
     renderAll();
     drawGenerationCharts();
+    initVisitCounter();
   } catch (err) {
     renderLoadError(err);
   }
