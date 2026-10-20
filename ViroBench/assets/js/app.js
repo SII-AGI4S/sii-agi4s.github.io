@@ -394,25 +394,132 @@ function renderOverallPills() {
   });
 }
 
-async function initVisitCounter() {
-  const target = $("#visitCount");
-  if (!target) return;
-  const endpoint = "https://page-views-api.ratneshc.com/api/v1";
-  const site = "virobench-web";
-  const path = "/";
-  try {
-    const query = `?site=${encodeURIComponent(site)}&path=${encodeURIComponent(path)}`;
+// Shared counters (page-views-api dedupes the same visitor per path for 30 min).
+// "/" counts visits; "/visitors" is only tracked on a browser's first visit.
+const VISIT_COUNTER = { endpoint: "https://page-views-api.ratneshc.com/api/v1", site: "virobench-web" };
+const VISITOR_FLAG = "virobench:visitor";
+const MAP_WIDGET = {
+  src: "https://mapmyvisitors.com/map.js",
+  // d = widget id, co = ocean, cl = land, w = a (fit container), t = n (hide built-in labels)
+  params: { d: "6jYY7fMtT0nC64NmJUsKFUIu5TSnWs-OjfivsaumnMo", co: "f4f8fb", cl: "d3e0ea", w: "a", t: "n" },
+};
+
+async function counterViews(path, track) {
+  const { endpoint, site } = VISIT_COUNTER;
+  const query = `?site=${encodeURIComponent(site)}&path=${encodeURIComponent(path)}`;
+  if (track) {
     const tracked = await fetch(`${endpoint}/track${query}`, { cache: "no-store", keepalive: true });
-    if (!tracked.ok) throw new Error(`track ${tracked.status}`);
-    const response = await fetch(`${endpoint}/views${query}`, { cache: "no-store" });
-    if (!response.ok) throw new Error(`views ${response.status}`);
-    const payload = await response.json();
-    if (!Number.isFinite(Number(payload?.views))) throw new Error("invalid counter response");
-    target.textContent = `Visits · ${Number(payload.views).toLocaleString()}`;
-  } catch (error) {
-    target.textContent = "Visits · —";
-    console.warn("Shared visit counter unavailable", error);
+    if (!tracked.ok) throw new Error(`track ${path} ${tracked.status}`);
   }
+  const response = await fetch(`${endpoint}/views${query}`, { cache: "no-store" });
+  if (!response.ok) throw new Error(`views ${path} ${response.status}`);
+  const payload = await response.json();
+  const views = Number(payload?.views);
+  if (!Number.isFinite(views)) throw new Error("invalid counter response");
+  return views;
+}
+
+function readVisitorFlag() {
+  try { return localStorage.getItem(VISITOR_FLAG) === "1"; } catch (_) { return false; }
+}
+
+function writeVisitorFlag() {
+  try { localStorage.setItem(VISITOR_FLAG, "1"); } catch (_) { /* storage blocked: the API's 30-min dedupe still applies */ }
+}
+
+function countUp(el, value) {
+  const reduce = window.matchMedia?.("(prefers-reduced-motion: reduce)").matches;
+  if (reduce || value < 10) { el.textContent = value.toLocaleString(); return; }
+  const start = performance.now();
+  const frame = (now) => {
+    const p = Math.min(1, (now - start) / 1100);
+    el.textContent = Math.round(value * (1 - Math.pow(1 - p, 3))).toLocaleString();
+    if (p < 1) requestAnimationFrame(frame);
+  };
+  requestAnimationFrame(frame);
+}
+
+function showCount(el, value) {
+  if (!("IntersectionObserver" in window)) { countUp(el, value); return; }
+  const io = new IntersectionObserver((entries) => {
+    if (!entries.some((entry) => entry.isIntersecting)) return;
+    io.disconnect();
+    countUp(el, value);
+  }, { threshold: 0.4 });
+  io.observe(el);
+}
+
+async function initVisitorStats() {
+  const visitsEl = $("#visitCount");
+  const visitorsEl = $("#visitorCount");
+  if (!visitsEl || !visitorsEl) return;
+  const firstVisit = !readVisitorFlag();
+  const [visits, visitors] = await Promise.allSettled([counterViews("/", true), counterViews("/visitors", firstVisit)]);
+  if (visitors.status === "fulfilled" && firstVisit) writeVisitorFlag();
+  [[visits, visitsEl], [visitors, visitorsEl]].forEach(([result, el]) => {
+    if (result.status === "fulfilled") showCount(el, result.value);
+    else console.warn("Visitor counter unavailable", result.reason);
+  });
+}
+
+function initVisitorMap() {
+  const frame = $("#visitorMap");
+  const status = $("#visitorMapStatus");
+  if (!frame || $("#mapmyvisitors")) return;
+  const fail = () => {
+    if (frame.querySelector("#mapmyvisitors-widget")) return;
+    status.innerHTML = `Visitor map is unavailable right now. <a href="https://mapmyvisitors.com/web/1c8z6" target="_blank" rel="noopener noreferrer">Open the traffic report →</a>`;
+    frame.classList.add("is-failed");
+  };
+  // The widget renders after the element with id="mapmyvisitors" and sizes itself to the parent's width once.
+  // It also records the visit, so it loads on every page; the hidden Contact page is laid out
+  // invisibly (zero height) until the map has rendered at its real width.
+  const page = frame.closest(".page");
+  page?.classList.add("measuring");
+  let baseWidth = 0;
+  const fit = () => {
+    const widget = frame.querySelector("#mapmyvisitors-widget");
+    if (!widget || !frame.clientWidth) return;
+    baseWidth = baseWidth || widget.offsetWidth;
+    const cs = getComputedStyle(frame);
+    const padX = parseFloat(cs.paddingLeft) + parseFloat(cs.paddingRight);
+    const chromeY = frame.offsetHeight - frame.clientHeight + parseFloat(cs.paddingTop) + parseFloat(cs.paddingBottom);
+    const scale = Math.min(1, (frame.clientWidth - padX) / baseWidth);
+    widget.style.transform = scale < 1 ? `scale(${scale})` : "";
+    frame.style.height = scale < 1 ? `${widget.offsetHeight * scale + chromeY}px` : "";
+  };
+  const observer = new MutationObserver(() => {
+    const widget = frame.querySelector("#mapmyvisitors-widget");
+    if (!widget || !frame.querySelector(".jvectormap-container")) return;
+    observer.disconnect();
+    widget.target = "_blank";
+    widget.rel = "noopener noreferrer";
+    frame.classList.add("is-ready");
+    fit();
+    page?.classList.remove("measuring");
+    if ("ResizeObserver" in window) new ResizeObserver(fit).observe(frame);
+  });
+  observer.observe(frame, { childList: true, subtree: true });
+  const script = document.createElement("script");
+  script.id = "mapmyvisitors";
+  script.src = `${MAP_WIDGET.src}?${new URLSearchParams(MAP_WIDGET.params)}`;
+  script.async = true;
+  script.onerror = fail;
+  frame.appendChild(script);
+  setTimeout(fail, 20000);
+}
+
+function initChrome() {
+  const nav = $(".nav");
+  const toTop = $("#toTop");
+  const onScroll = () => {
+    const y = window.scrollY;
+    nav?.classList.toggle("scrolled", y > 8);
+    toTop?.classList.toggle("on", y > 900);
+  };
+  window.addEventListener("scroll", onScroll, { passive: true });
+  onScroll();
+  if (toTop) toTop.onclick = () => window.scrollTo({ top: 0, behavior: "smooth" });
 }
 
 function renderPills() {
@@ -938,7 +1045,8 @@ function initNav() {
     $$(".page").forEach((x) => x.classList.toggle("on", x.id === "page-" + p));
     $$(".nav-btn").forEach((x) => x.classList.toggle("on", x.dataset.page === p));
     window.scrollTo({ top: 0, behavior: "smooth" });
-    setTimeout(() => { drawBarChart(); drawScatter(); drawGenerationCharts(); }, 60);
+    // Redraws the charts and lets the visitor map re-measure itself after being hidden.
+    setTimeout(() => window.dispatchEvent(new Event("resize")), 60);
   };
   $$("[data-page]").forEach((b) => (b.onclick = () => go(b.dataset.page)));
   $$("[data-page-go]").forEach((b) => (b.onclick = () => go(b.dataset.pageGo)));
@@ -1098,6 +1206,10 @@ window.addEventListener("resize", () => {
 });
 
 async function bootstrap() {
+  initChrome();
+  initVisitorStats();
+  if (document.readyState === "complete") initVisitorMap();
+  else window.addEventListener("load", initVisitorMap, { once: true });
   try {
     await ensureLottieLoaded();
     initHeroDnaAnimation();
@@ -1114,7 +1226,6 @@ async function bootstrap() {
     initScatterHover();
     renderAll();
     drawGenerationCharts();
-    initVisitCounter();
   } catch (err) {
     renderLoadError(err);
   }
